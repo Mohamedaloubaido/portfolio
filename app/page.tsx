@@ -4,14 +4,16 @@ const experience = [
     company: "Ministry of Interior",
     period: "Apr 2026 — Present",
     summary:
-      "Support complaint intake, case follow-up, official correspondence and administrative coordination within recruitment-related workflows.",
+      "Handle complaint intake, case follow-up, official correspondence, record review and administrative coordination across recruitment-related workflows.",
+    highlights: ["Case follow-up", "Official correspondence", "Record verification", "Administrative coordination"],
   },
   {
     role: "Data Entry Specialist",
     company: "New Horizons Student Services",
     period: "2019 — Mar 2026",
     summary:
-      "Managed high-volume student application records, CRM updates, data verification and administrative processing for private university applications in Türkiye.",
+      "Managed high-volume student application records, CRM updates, data verification and administrative processing for private-university applications in Türkiye.",
+    highlights: ["High-volume data entry", "CRM operations", "Application processing", "Data quality"],
   },
   {
     role: "Cashier",
@@ -19,157 +21,265 @@ const experience = [
     period: "Jun 2025 — Jun 2026",
     summary:
       "Handled daily transactions, customer-facing operations and cash reconciliation while maintaining accuracy under time pressure.",
+    highlights: ["Cash reconciliation", "Customer service", "Transaction accuracy"],
   },
 ];
 
 const projects = [
   {
+    number: "01",
     title: "NAQSHA",
-    type: "E-commerce & Brand Operations",
+    type: "E-commerce · Product Operations · Brand System",
+    headline: "Turning a custom-printing concept into a structured customer journey.",
     description:
-      "A Syrian contemporary custom-printing brand and commerce platform. Work includes product workflows, studio customization, customer proof approval, returns, support flows, content direction and store UX.",
-    stack: ["E-commerce", "Product Operations", "UX", "Brand Systems", "AI-assisted workflows"],
+      "NAQSHA is a Syrian contemporary custom-printing brand and commerce platform. My work spans business requirements, product flows, store UX, customization logic, proof approval, returns, customer support and launch content direction.",
+    contribution: [
+      "Mapped customer journeys from product selection through customization and order handling.",
+      "Defined operational requirements for proof approval, returns, support and custom-design requests.",
+      "Directed UX and brand consistency across the store and campaign assets.",
+    ],
+    stack: ["Product Operations", "E-commerce", "UX", "Workflow Design", "AI-assisted execution"],
   },
   {
+    number: "02",
     title: "Zorvenaq",
-    type: "Freelance Platform",
+    type: "Marketplace · Product QA · Workflow Architecture",
+    headline: "Designing operational logic for a freelance marketplace.",
     description:
-      "A freelance marketplace product with hiring flows, contracts, milestones, internal wallet concepts, escrow logic, role-based administration and bilingual product requirements.",
-    stack: ["Next.js", "React", "TypeScript", "Supabase", "Product QA"],
+      "A freelance platform covering matching, applications, offers, contracts, milestones, workspace operations, disputes and internal finance concepts. My role centers on requirements, workflow design, testing, QA and product iteration.",
+    contribution: [
+      "Structured end-to-end hiring and contract workflows for clients and freelancers.",
+      "Specified wallet, escrow, deposit, withdrawal and administration requirements.",
+      "Tested product flows, identified failures and iterated on usability and operational rules.",
+    ],
+    stack: ["Next.js", "React", "TypeScript", "Supabase", "Product QA", "Requirements"],
   },
   {
+    number: "03",
     title: "Operations & Reporting Systems",
-    type: "Data & Administration",
+    type: "Data · Administration · Process Control",
+    headline: "Making administrative work easier to trace, review and improve.",
     description:
-      "Structured spreadsheets, complaint classification, employee evaluation models, reporting templates and process-oriented administrative tools designed for accuracy and traceability.",
-    stack: ["Excel", "Google Sheets", "Reporting", "Data Quality", "Workflow Design"],
+      "A collection of spreadsheet models, complaint-classification systems, employee-evaluation frameworks and reporting templates built around accuracy, accountability and operational visibility.",
+    contribution: [
+      "Designed structured records and reporting formats for recurring administrative work.",
+      "Built classification approaches for complaints, delays and operational issues.",
+      "Introduced traceability concepts to identify where errors originated in a process.",
+    ],
+    stack: ["Excel", "Google Sheets", "Reporting", "Data Quality", "Process Design"],
   },
 ];
 
-const skills = [
-  "Data Entry",
-  "CRM Operations",
-  "Data Verification",
-  "Microsoft Excel",
-  "Google Sheets",
-  "Microsoft Office",
-  "Administrative Reporting",
-  "Process Improvement",
-  "Quality Control",
-  "Next.js",
-  "React",
-  "TypeScript",
-  "Supabase",
-  "AI-assisted Workflows",
+const capabilityGroups = [
+  {
+    title: "Data & CRM",
+    items: ["Data Entry", "CRM Operations", "Data Verification", "Data Quality", "Excel", "Google Sheets"],
+  },
+  {
+    title: "Operations",
+    items: ["Administrative Reporting", "Case Follow-up", "Process Improvement", "Quality Control", "Workflow Design"],
+  },
+  {
+    title: "Digital",
+    items: ["Next.js", "React", "TypeScript", "Supabase", "Product QA", "AI-assisted Workflows"],
+  },
+];
+
+const stats = [
+  { value: "7+", label: "Years across data and administrative work" },
+  { value: "99%+", label: "Accuracy maintained in high-volume data workflows" },
+  { value: "50K+", label: "Records handled monthly at peak volume" },
 ];
 
 export default function Home() {
   return (
-    <main>
+    <main id="top">
       <header className="nav-wrap">
-        <nav className="nav container">
-          <a className="brand" href="#top" aria-label="Home">MA.</a>
+        <nav className="nav container" aria-label="Primary navigation">
+          <a className="brand" href="#top" aria-label="Mohammed Al-Obaido home">
+            M<span>/</span>A
+          </a>
           <div className="nav-links">
             <a href="#about">About</a>
             <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
+            <a href="#work">Work</a>
+            <a href="#capabilities">Capabilities</a>
           </div>
+          <a className="nav-cta" href="#contact">Let&apos;s talk ↗</a>
         </nav>
       </header>
 
-      <section className="hero container" id="top">
-        <div className="eyebrow">DATA · OPERATIONS · DIGITAL PROJECTS</div>
-        <h1>Mohammed<br />Al-Obaido</h1>
-        <p className="hero-copy">
-          Data and operations professional focused on accuracy, structured workflows,
-          administrative execution and practical digital products.
-        </p>
-        <div className="hero-actions">
-          <a className="button primary" href="#projects">View selected work</a>
-          <a className="button secondary" href="#contact">Contact me</a>
+      <section className="hero container">
+        <div className="hero-grid">
+          <div>
+            <div className="status"><span /> Open to international opportunities</div>
+            <p className="kicker">DATA · CRM · OPERATIONS · ADMINISTRATION</p>
+            <h1>
+              Mohammed<br />
+              <em>Al-Obaido</em>
+            </h1>
+          </div>
+
+          <div className="hero-side">
+            <p>
+              I turn high-volume information and operational complexity into
+              <strong> accurate records, clear workflows and practical systems.</strong>
+            </p>
+            <div className="hero-actions">
+              <a className="button primary" href="#work">Explore selected work <span>↘</span></a>
+              <a className="button ghost" href="mailto:kawderex@gmail.com">Email me ↗</a>
+            </div>
+          </div>
         </div>
-        <div className="hero-meta">
-          <span>Available for international opportunities</span>
+
+        <div className="hero-footer">
+          <span>Based in Syria · Open to relocation & remote work</span>
           <span>English · Turkish</span>
+          <a href="https://github.com/Mohamedaloubaido" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+      </section>
+
+      <section className="stats-band" aria-label="Career highlights">
+        <div className="container stats-grid">
+          {stats.map((stat) => (
+            <div className="stat" key={stat.value}>
+              <strong>{stat.value}</strong>
+              <span>{stat.label}</span>
+            </div>
+          ))}
         </div>
       </section>
 
       <section className="section container" id="about">
-        <div className="section-label">01 / ABOUT</div>
-        <div className="two-col">
-          <h2>Reliable execution.<br />Structured thinking.</h2>
+        <div className="section-head">
+          <span className="section-index">01</span>
+          <span className="section-label">Profile</span>
+        </div>
+        <div className="about-grid">
+          <h2>Accuracy first.<br />Systems second.<br /><em>Always practical.</em></h2>
           <div className="body-copy">
-            <p>
-              I work across data entry, CRM operations, administration and digital project development.
-              My background combines high-volume record processing with process improvement, reporting,
-              customer-facing workflows and hands-on product work.
+            <p className="lead">
+              I am a data and operations professional with experience spanning high-volume record processing,
+              CRM administration, complaint follow-up, reporting and customer-facing operations.
             </p>
             <p>
-              I am most effective in environments where accuracy matters, information needs to stay organized,
-              and operational problems need practical solutions.
+              Alongside my administrative work, I develop and test digital product ideas. That gives me a useful
+              perspective: I understand both the person using a workflow and the operational structure behind it.
+            </p>
+            <p>
+              I work best where information must stay organized, mistakes have real consequences and processes
+              need to become clearer, faster and easier to audit.
             </p>
           </div>
         </div>
       </section>
 
       <section className="section container" id="experience">
-        <div className="section-label">02 / EXPERIENCE</div>
-        <div className="stack">
+        <div className="section-head">
+          <span className="section-index">02</span>
+          <span className="section-label">Experience</span>
+        </div>
+
+        <div className="experience-list">
           {experience.map((item) => (
             <article className="experience-row" key={`${item.company}-${item.role}`}>
               <div className="period">{item.period}</div>
-              <div>
+              <div className="experience-main">
                 <h3>{item.role}</h3>
                 <div className="company">{item.company}</div>
                 <p>{item.summary}</p>
               </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section container" id="projects">
-        <div className="section-label">03 / SELECTED WORK</div>
-        <div className="project-grid">
-          {projects.map((project, index) => (
-            <article className="project-card" key={project.title}>
-              <div className="project-index">0{index + 1}</div>
-              <div>
-                <div className="project-type">{project.type}</div>
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <div className="tags">
-                  {project.stack.map((tag) => <span key={tag}>{tag}</span>)}
-                </div>
+              <div className="mini-tags">
+                {item.highlights.map((tag) => <span key={tag}>{tag}</span>)}
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="section container" id="skills">
-        <div className="section-label">04 / CAPABILITIES</div>
-        <div className="skills-grid">
-          {skills.map((skill) => <div className="skill" key={skill}>{skill}</div>)}
+      <section className="work-section" id="work">
+        <div className="container">
+          <div className="section-head light-head">
+            <span className="section-index">03</span>
+            <span className="section-label">Selected work</span>
+          </div>
+          <div className="work-intro">
+            <h2>Selected systems,<br />products & workflows.</h2>
+            <p>
+              Projects shown here focus on the parts I actively shaped: requirements, workflow logic,
+              operations, QA, usability and product direction.
+            </p>
+          </div>
+
+          <div className="projects">
+            {projects.map((project) => (
+              <article className="project-card" key={project.title}>
+                <div className="project-topline">
+                  <span>{project.number}</span>
+                  <span>{project.type}</span>
+                </div>
+                <div className="project-layout">
+                  <div>
+                    <h3>{project.title}</h3>
+                    <p className="project-headline">{project.headline}</p>
+                  </div>
+                  <div className="project-details">
+                    <p>{project.description}</p>
+                    <div className="contribution">
+                      <span className="tiny-label">MY CONTRIBUTION</span>
+                      <ul>
+                        {project.contribution.map((item) => <li key={item}>{item}</li>)}
+                      </ul>
+                    </div>
+                    <div className="tags dark-tags">
+                      {project.stack.map((tag) => <span key={tag}>{tag}</span>)}
+                    </div>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="section contact container" id="contact">
-        <div className="section-label">05 / CONTACT</div>
-        <div className="contact-block">
-          <h2>Open to the next<br />serious opportunity.</h2>
-          <p>
-            Interested in Data Entry, CRM, Operations, Administrative and selected digital roles.
-          </p>
-          <a className="email" href="mailto:kawderex@gmail.com">kawderex@gmail.com</a>
+      <section className="section container" id="capabilities">
+        <div className="section-head">
+          <span className="section-index">04</span>
+          <span className="section-label">Capabilities</span>
+        </div>
+        <div className="capability-grid">
+          {capabilityGroups.map((group, index) => (
+            <article className="capability-card" key={group.title}>
+              <span className="cap-number">0{index + 1}</span>
+              <h3>{group.title}</h3>
+              <div className="cap-list">
+                {group.items.map((item) => <span key={item}>{item}</span>)}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="contact-section" id="contact">
+        <div className="container contact-grid">
+          <div>
+            <span className="section-label">Available for the right opportunity</span>
+            <h2>Need someone who<br />cares about the details?</h2>
+          </div>
+          <div className="contact-side">
+            <p>
+              I am interested in Data Entry, CRM, Operations, Administrative and selected product-support roles,
+              including remote, freelance and relocation opportunities.
+            </p>
+            <a className="email" href="mailto:kawderex@gmail.com">kawderex@gmail.com ↗</a>
+            <a className="text-link" href="https://github.com/Mohamedaloubaido" target="_blank" rel="noreferrer">GitHub profile ↗</a>
+          </div>
         </div>
       </section>
 
       <footer className="footer container">
         <span>© 2026 Mohammed Al-Obaido</span>
-        <span>Built for clarity, credibility and performance.</span>
+        <a href="#top">Back to top ↑</a>
       </footer>
     </main>
   );

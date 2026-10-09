@@ -2,9 +2,26 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Mohammed Al-Obaido | Operations, Data & Digital Projects",
+  title: "Mohammed Al-Obaido | Data, CRM & Operations",
   description:
-    "Professional portfolio of Mohammed Al-Obaido — Data Entry, CRM, Operations, Administration and digital project work.",
+    "Portfolio of Mohammed Al-Obaido — data entry, CRM operations, administration, reporting, workflow design and selected digital product work.",
+  keywords: [
+    "Mohammed Al-Obaido",
+    "Data Entry",
+    "CRM Operations",
+    "Operations",
+    "Administration",
+    "Excel",
+    "Google Sheets",
+    "Product QA",
+  ],
+  authors: [{ name: "Mohammed Al-Obaido" }],
+  openGraph: {
+    title: "Mohammed Al-Obaido | Data, CRM & Operations",
+    description:
+      "Data and operations professional focused on accuracy, structured workflows and practical systems.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
