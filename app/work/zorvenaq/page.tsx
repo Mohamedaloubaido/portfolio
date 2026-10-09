@@ -1,3 +1,5 @@
+import { Base64Image } from "../../components/Base64Asset";
+
 export const metadata = {
   title: "Zorvenaq Case Study | Mohammed Al-Obaido",
   description: "Product requirements, workflow architecture and QA case study for Zorvenaq.",
@@ -26,6 +28,17 @@ export default function ZorvenaqCaseStudy() {
           <div><span>ROLE</span><strong>Founder / Product Builder</strong></div>
           <div><span>FOCUS</span><strong>Requirements · QA · Workflow Architecture</strong></div>
           <div><span>STACK EXPOSURE</span><strong>Next.js · React · TypeScript · Supabase</strong></div>
+        </div>
+      </section>
+
+      <section className="case-gallery zorvenaq-gallery">
+        <div className="container case-gallery-grid">
+          <div>
+            <div className="case-photo">
+              <Base64Image dataPath="/assets/zorvenaq-cover.webp.b64" alt="Zorvenaq platform visual journey" />
+            </div>
+            <div className="case-caption"><span>Marketplace concept & product communication</span><span>ZORVENAQ / 2026</span></div>
+          </div>
         </div>
       </section>
 
