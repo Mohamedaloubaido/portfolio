@@ -1,3 +1,5 @@
+import { Base64Image } from "../../components/Base64Asset";
+
 export const metadata = {
   title: "NAQSHA Case Study | Mohammed Al-Obaido",
   description: "Product operations, workflow design and e-commerce case study for NAQSHA.",
@@ -29,14 +31,19 @@ export default function NaqshaCaseStudy() {
         </div>
       </section>
 
-      <section className="case-visual naqsha-visual">
-        <div className="container mockup-frame">
-          <div className="mock-browser">
-            <div className="mock-top"><span/><span/><span/></div>
-            <div className="mock-naqsha-grid">
-              <div className="mock-panel mock-copy"><small>NAQSHA / CUSTOM STUDIO</small><h2>Wear your story.<br/>Print your idea.</h2><p>Product → Options → Design → Proof → Order</p></div>
-              <div className="mock-product"><div className="shirt-shape"><span>نقشة</span></div></div>
+      <section className="case-gallery">
+        <div className="container case-gallery-grid">
+          <div>
+            <div className="case-photo">
+              <Base64Image dataPath="/assets/naqsha-cover.webp.b64" alt="NAQSHA product and campaign collection" />
             </div>
+            <div className="case-caption"><span>Brand system & product presentation</span><span>NAQSHA / 2026</span></div>
+          </div>
+          <div>
+            <div className="case-photo portrait">
+              <Base64Image dataPath="/assets/naqsha-editorial.webp.b64" alt="NAQSHA editorial fashion campaign" />
+            </div>
+            <div className="case-caption"><span>Editorial direction</span><span>Syrian-contemporary identity</span></div>
           </div>
         </div>
       </section>
