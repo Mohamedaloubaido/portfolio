@@ -1,4 +1,5 @@
 import PrintButton from "./PrintButton";
+import { DownloadResumeButton } from "../components/Base64Asset";
 
 export const metadata = {
   title: "Resume | Mohammed Al-Obaido",
@@ -46,7 +47,10 @@ export default function ResumePage() {
     <main className="resume-page">
       <div className="resume-toolbar container">
         <a className="text-link" href="/">← Back to portfolio</a>
-        <PrintButton />
+        <div className="resume-toolbar-actions">
+          <DownloadResumeButton className="resume-download" />
+          <PrintButton />
+        </div>
       </div>
 
       <article className="resume-sheet">
