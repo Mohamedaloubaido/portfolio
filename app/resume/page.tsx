@@ -1,3 +1,5 @@
+import PrintButton from "./PrintButton";
+
 export const metadata = {
   title: "Resume | Mohammed Al-Obaido",
   description: "Professional resume of Mohammed Al-Obaido.",
@@ -44,7 +46,7 @@ export default function ResumePage() {
     <main className="resume-page">
       <div className="resume-toolbar container">
         <a className="text-link" href="/">← Back to portfolio</a>
-        <button onClick={() => window.print()} className="print-button">Print / Save PDF</button>
+        <PrintButton />
       </div>
 
       <article className="resume-sheet">
