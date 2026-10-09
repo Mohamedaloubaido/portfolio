@@ -1,3 +1,5 @@
+import { Base64Image, DownloadResumeButton } from "./components/Base64Asset";
+
 const experience = [
   {
     role: "Data Entry & Complaints Operations",
@@ -38,6 +40,8 @@ const projects = [
     number: "01",
     title: "NAQSHA",
     href: "/work/naqsha",
+    image: "/assets/naqsha-cover.webp.b64",
+    imageAlt: "NAQSHA fashion campaign and product presentation",
     type: "E-commerce · Product Operations · Brand System",
     headline: "Turning a custom-printing concept into a structured customer journey.",
     description:
@@ -53,6 +57,8 @@ const projects = [
     number: "02",
     title: "Zorvenaq",
     href: "/work/zorvenaq",
+    image: "/assets/zorvenaq-cover.webp.b64",
+    imageAlt: "Zorvenaq marketplace visual journey",
     type: "Marketplace · Product QA · Workflow Architecture",
     headline: "Designing operational logic for a freelance marketplace.",
     description:
@@ -68,6 +74,8 @@ const projects = [
     number: "03",
     title: "Operations & Reporting Systems",
     href: null,
+    image: null,
+    imageAlt: "",
     type: "Data · Administration · Process Control",
     headline: "Making administrative work easier to trace, review and improve.",
     description:
@@ -131,7 +139,7 @@ export default function Home() {
             <p>I turn high-volume information and operational complexity into <strong>accurate records, clear workflows and practical systems.</strong></p>
             <div className="hero-actions">
               <a className="button primary" href="#work">Explore selected work <span>↘</span></a>
-              <a className="button ghost" href="/resume">View resume ↗</a>
+              <DownloadResumeButton className="button ghost" />
               <a className="button ghost" href="mailto:obedomohammed@gmail.com">Email me ↗</a>
             </div>
           </div>
@@ -192,6 +200,11 @@ export default function Home() {
                     <h3>{project.title}</h3>
                     <p className="project-headline">{project.headline}</p>
                     {project.href && <a className="project-case-link" href={project.href}>View full case study ↗</a>}
+                    {project.image && (
+                      <div className="project-media">
+                        <Base64Image dataPath={project.image} alt={project.imageAlt} />
+                      </div>
+                    )}
                   </div>
                   <div className="project-details">
                     <p>{project.description}</p>
