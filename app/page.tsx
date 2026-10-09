@@ -87,6 +87,25 @@ const projects = [
     ],
     stack: ["Excel", "Google Sheets", "Reporting", "Data Quality", "Process Design"],
   },
+  {
+    number: "04",
+    title: "Employee Records Dashboard",
+    href: null,
+    liveUrl: "https://employee-records-dashboard.vercel.app",
+    githubUrl: "https://github.com/Mohamedaloubaido/employee-records-dashboard",
+    image: null,
+    imageAlt: "",
+    type: "React · TypeScript · Data Management",
+    headline: "A practical employee-record system built around fast search, clean data and operational visibility.",
+    description:
+      "A responsive employee records dashboard for managing staff data, status and department structure. It includes persistent browser storage, CRUD operations, search, filters, sorting, pagination, department analytics, reports and CSV export.",
+    contribution: [
+      "Built add, edit, view and delete flows with persistent LocalStorage data.",
+      "Implemented search, multi-filtering, sorting, pagination and CSV export.",
+      "Added department and workforce reporting views with responsive UI behavior.",
+    ],
+    stack: ["React", "TypeScript", "Vite", "LocalStorage", "Responsive UI", "Vercel"],
+  },
 ];
 
 const capabilityGroups = [
@@ -200,6 +219,8 @@ export default function Home() {
                     <h3>{project.title}</h3>
                     <p className="project-headline">{project.headline}</p>
                     {project.href && <a className="project-case-link" href={project.href}>View full case study ↗</a>}
+                    {project.liveUrl && <a className="project-case-link" href={project.liveUrl} target="_blank" rel="noreferrer">Open live project ↗</a>}
+                    {project.githubUrl && <a className="project-case-link" href={project.githubUrl} target="_blank" rel="noreferrer">View source on GitHub ↗</a>}
                     {project.image && (
                       <div className="project-media">
                         <Base64Image dataPath={project.image} alt={project.imageAlt} />
