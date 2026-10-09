@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "./v2.css";
+import "./media.css";
 
 export const metadata: Metadata = {
   title: "Mohammed Al-Obaido | Data, CRM & Operations",
