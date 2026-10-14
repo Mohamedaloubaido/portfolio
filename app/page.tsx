@@ -38,6 +38,25 @@ const experience = [
 const projects = [
   {
     number: "01",
+    title: "TAWADUD",
+    href: "/work/tawadud",
+    liveUrl: "https://gettawadud.com",
+    image: null,
+    imageAlt: "",
+    type: "AI Customer Experience · SaaS · Full-Stack Development",
+    headline: "AI answers. Humans step in. Everything stays connected.",
+    description:
+      "An AI customer experience platform I designed and developed using AI-assisted workflows. It combines a website chatbot, a shared inbox, a company knowledge base, human handoff and conversation analytics, with Arabic and English conversations grounded in approved knowledge.",
+    contribution: [
+      "Designed and developed the product interface, website widget and customer-to-operator conversation flows.",
+      "Implemented knowledge import and indexing, grounded AI answers, shared inbox assignment and human takeover.",
+      "Built workspace access controls and account security, tested product flows and deployed the platform on Vercel.",
+    ],
+    stack: ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL", "OpenAI", "Vercel"],
+  },
+
+  {
+    number: "02",
     title: "NAQSHA",
     href: "/work/naqsha",
     image: "/assets/naqsha-cover.webp.b64",
@@ -54,7 +73,7 @@ const projects = [
     stack: ["Product Operations", "E-commerce", "UX", "Workflow Design", "AI-assisted execution"],
   },
   {
-    number: "02",
+    number: "03",
     title: "Zorvenaq",
     href: "/work/zorvenaq",
     image: "/assets/zorvenaq-cover.webp.b64",
@@ -71,7 +90,7 @@ const projects = [
     stack: ["Next.js", "React", "TypeScript", "Supabase", "Product QA", "Requirements"],
   },
   {
-    number: "03",
+    number: "04",
     title: "Operations & Reporting Systems",
     href: null,
     image: null,
@@ -88,7 +107,7 @@ const projects = [
     stack: ["Excel", "Google Sheets", "Reporting", "Data Quality", "Process Design"],
   },
   {
-    number: "04",
+    number: "05",
     title: "Employee Records Dashboard",
     href: null,
     liveUrl: "https://employee-records-dashboard.vercel.app",
@@ -207,7 +226,7 @@ export default function Home() {
           <div className="section-head light-head"><span className="section-index">03</span><span className="section-label">Selected work</span></div>
           <div className="work-intro">
             <h2>Selected systems,<br />products & workflows.</h2>
-            <p>Projects shown here focus on the parts I actively shaped: requirements, workflow logic, operations, QA, usability and product direction.</p>
+            <p>Projects shown here cover the products I designed and developed, alongside requirements, workflow logic, operations, QA and usability.</p>
           </div>
 
           <div className="projects">

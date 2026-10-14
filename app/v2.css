@@ -97,3 +97,11 @@
 @media (max-width: 860px) { .case-meta-grid, .case-two-col, .mock-naqsha-grid, .phase-grid, .system-grid, .state-chain { grid-template-columns: 1fr; } .mock-dashboard { grid-template-columns: 1fr; } .mock-dashboard aside { display: none; } .flow-map { grid-template-columns: 1fr; } .flow-map > b { transform: rotate(90deg); text-align: center; } .impact-grid { grid-template-columns: 1fr; } .impact-grid article:nth-child(odd) { border-right: 0; } .impact-grid article:nth-child(even) { padding-left: 0; } .phase-card, .system-card, .phase-card + .phase-card, .system-card + .system-card { min-height: auto; padding: 28px 0; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.16); } .phase-card > span, .system-card > span { margin-bottom: 36px; } .resume-header { flex-direction: column; } .resume-contact { align-items: flex-start; } .resume-columns { grid-template-columns: 1fr; } }
 @media (max-width: 600px) { .case-hero { padding-top: 56px; } .case-hero h1 { font-size: 20vw; } .case-section { padding: 78px 0; } .mock-browser, .mock-dashboard { min-height: 420px; } .mock-copy { padding: 28px; } .mock-product { min-height: 380px; } .dash-main { padding: 24px; } .dash-cards { grid-template-columns: 1fr; } .dash-flow { flex-wrap: wrap; } .case-next .container { flex-direction: column; align-items: flex-start; } .resume-sheet { padding: 34px 25px; } .resume-role-head { flex-direction: column; gap: 3px; } }
 @media print { body { background: white; } .resume-page { background: white; padding: 0; } .resume-toolbar { display: none; } .resume-sheet { width: 100%; max-width: none; margin: 0; padding: 28px 36px; box-shadow: none; } }
+
+.tawadud-live-link { display: inline-block; margin-top: 30px; }
+.tawadud-showcase { padding: 96px 0; background: #09090b; color: #f4f4f5; }
+.tawadud-showcase .case-kicker { color: #d4a85f; }
+.tawadud-showcase h2 { max-width: 900px; margin: 24px 0; font-size: clamp(36px, 6vw, 76px); line-height: 1.05; letter-spacing: -.045em; }
+.tawadud-showcase p { color: #a1a1aa; line-height: 1.65; }
+.tawadud-feature-labels { display: flex; flex-wrap: wrap; gap: 20px 32px; margin-top: 64px; padding-top: 24px; border-top: 1px solid #27272a; color: #d4a85f; font-size: 10px; letter-spacing: .16em; }
+@media (max-width: 600px) { .tawadud-showcase { padding: 64px 0; } .tawadud-feature-labels { gap: 18px; } }

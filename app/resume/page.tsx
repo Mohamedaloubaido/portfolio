@@ -60,15 +60,15 @@ export default function ResumePage() {
             <p>AI-Assisted Digital Product Developer | Data & Operations Specialist</p>
           </div>
           <div className="resume-contact">
-            <span>Idlib, Syria</span>
+            <span>Idlib, Syria</span><a href="tel:+963962531348">+963 962 531 348</a>
             <a href="mailto:obedomohammed@gmail.com">obedomohammed@gmail.com</a>
-            <span>Open to Remote, Contract & GCC Relocation</span>
+            <span>Open to Remote, Contract & GCC Relocation</span><a href="https://github.com/Mohamedaloubaido" target="_blank" rel="noreferrer">GitHub · Mohamedaloubaido</a>
           </div>
         </header>
 
         <section className="resume-block">
           <h2>Professional Summary</h2>
-          <p>Data and operations professional with 7+ years of experience in high-volume data entry, verification, reporting, transaction processing and complaint handling, complemented by hands-on experience building digital products with AI-assisted development tools. Strong in operational accuracy, requirements analysis, functional testing, defect tracking and structured data management.</p>
+          <p>Data and operations professional with 7+ years of experience in high-volume data entry, verification, reporting, transaction processing and complaint handling, complemented by hands-on work building AI-powered web products. Designed and developed TAWADUD, an AI customer experience platform. Strong in operational accuracy, requirements analysis, functional testing, defect tracking and structured data management.</p>
         </section>
 
         <section className="resume-block">
@@ -83,6 +83,7 @@ export default function ResumePage() {
 
         <section className="resume-block">
           <h2>Selected Digital Projects</h2>
+          <div className="resume-role"><div className="resume-role-head"><strong><a href="/work/tawadud">TAWADUD | AI Customer Experience — Designer / Developer</a></strong><span>Oct 2026 — Present</span></div><ul><li>Designed and developed an AI customer experience platform using AI-assisted workflows with Next.js, React, TypeScript, Supabase/PostgreSQL and OpenAI, including a website chatbot, shared inbox, knowledge base and human handoff.</li><li>Implemented knowledge-grounded Arabic/English replies, conversation analytics, workspace access controls and account security; tested customer and operator workflows and deployed the platform on Vercel.</li></ul></div>
           <div className="resume-role"><div className="resume-role-head"><strong>ZORVENAQ | Freelance Marketplace — Founder / Product Builder</strong><span>2026</span></div><ul><li>Led product development using AI-assisted tools: defined requirements, tested workflows, tracked defects and worked within a Next.js / React / TypeScript and Supabase / PostgreSQL environment.</li><li>Defined flows for offers, contracts, internal wallet, permissions and transaction handling, then reviewed and validated implementation before acceptance.</li></ul></div>
           <div className="resume-role"><div className="resume-role-head"><strong>NAQSHA | Custom Printing E-commerce Store — Founder / Product Builder</strong><span>2026</span></div><ul><li>Led development of storefront and admin workflows, product customization, pricing logic and order flows using AI-assisted development.</li></ul></div>
         </section>
