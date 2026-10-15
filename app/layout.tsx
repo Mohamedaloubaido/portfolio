@@ -3,26 +3,28 @@ import Script from "next/script";
 import "./globals.css";
 import "./v2.css";
 import "./media.css";
+import "./dev.css";
 
 export const metadata: Metadata = {
-  title: "Mohammed Al-Obaido | Data, CRM & Operations",
+  title: "Mohammed Al-Obaido | Full-Stack Developer",
   description:
-    "Portfolio of Mohammed Al-Obaido — data entry, CRM operations, administration, reporting, workflow design and selected digital product work.",
+    "Portfolio of Mohammed Al-Obaido — full-stack developer building modern web applications, SaaS products and AI-powered systems with Next.js, React, TypeScript and PostgreSQL.",
   keywords: [
     "Mohammed Al-Obaido",
-    "Data Entry",
-    "CRM Operations",
-    "Operations",
-    "Administration",
-    "Excel",
-    "Google Sheets",
-    "Product QA",
+    "Full-Stack Developer",
+    "Next.js",
+    "React",
+    "TypeScript",
+    "PostgreSQL",
+    "Supabase",
+    "SaaS",
+    "Web Development",
   ],
   authors: [{ name: "Mohammed Al-Obaido" }],
   openGraph: {
-    title: "Mohammed Al-Obaido | Data, CRM & Operations",
+    title: "Mohammed Al-Obaido | Full-Stack Developer",
     description:
-      "Data and operations professional focused on accuracy, structured workflows and practical systems.",
+      "Full-stack developer building web products from interface to infrastructure.",
     type: "website",
   },
 };
