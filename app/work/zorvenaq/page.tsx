@@ -1,5 +1,3 @@
-import { Base64Image } from "../../components/Base64Asset";
-
 export const metadata = {
   title: "Zorvenaq Case Study | Mohammed Al-Obaido",
   description: "Zorvenaq, a full-stack freelance marketplace product case study by Mohammed Al-Obaido.",
@@ -31,28 +29,16 @@ export default function ZorvenaqCaseStudy() {
         </div>
       </section>
 
-      <section className="case-gallery zorvenaq-gallery">
-        <div className="container case-gallery-grid">
-          <div>
-            <div className="case-photo">
-              <Base64Image dataPath="/assets/zorvenaq-cover.webp.b64" alt="Zorvenaq marketplace product visual" />
-            </div>
-            <div className="case-caption"><span>PRODUCT SYSTEM / MARKETPLACE</span><span>ZORVENAQ · 2026</span></div>
-          </div>
-        </div>
-      </section>
-
-      <section className="case-visual zorvenaq-visual">
-        <div className="container mockup-frame">
-          <div className="case-stage-head"><span>OPERATIONS VIEW</span><span>CONTRACT LIFECYCLE</span></div>
-          <div className="mock-dashboard">
-            <aside><b>Z</b><span>Overview</span><span>Matching</span><span>Contracts</span><span>Finance</span><span>Disputes</span></aside>
-            <div className="dash-main">
-              <div className="dash-head"><small>ACTIVE CONTRACTS</small><strong>Delivery operations</strong></div>
-              <div className="dash-cards"><div><small>FUNDED</small><b>24</b></div><div><small>IN DELIVERY</small><b>11</b></div><div><small>REVIEW</small><b>08</b></div></div>
-              <div className="dash-flow"><span>Offer</span><i>→</i><span>Fund</span><i>→</i><span>Work</span><i>→</i><span>Approve</span><i>→</i><span>Release</span></div>
-            </div>
-          </div>
+      <section className="case-section container">
+        <div className="case-section-label">SYSTEM ARCHITECTURE</div>
+        <div className="flow-map">
+          <div><span>01</span><strong>Product UI</strong><small>Client and freelancer flows across matching, applications, contracts and workspaces</small></div>
+          <b>→</b>
+          <div><span>02</span><strong>Application logic</strong><small>Next.js and TypeScript rules controlling state transitions and product behavior</small></div>
+          <b>→</b>
+          <div><span>03</span><strong>Data & access</strong><small>Supabase/PostgreSQL, authentication, relational state and role-based permissions</small></div>
+          <b>→</b>
+          <div><span>04</span><strong>Operations</strong><small>Finance verification, disputes, reviews, auditability and administrative controls</small></div>
         </div>
       </section>
 
@@ -69,7 +55,7 @@ export default function ZorvenaqCaseStudy() {
 
       <section className="case-dark">
         <div className="container case-section">
-          <div className="case-section-label light">SYSTEMS</div>
+          <div className="case-section-label light">CORE SYSTEMS</div>
           <div className="system-grid">
             {systems.map(([title, body], index) => (
               <article className="system-card" key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{body}</p></article>
@@ -84,6 +70,16 @@ export default function ZorvenaqCaseStudy() {
           {['funded','locked','submitted','approved','released'].map((item, index) => <div key={item}><span>0{index+1}</span><strong>{item}</strong></div>)}
         </div>
         <p className="chain-note">The product also handles disputed and refunded paths, permission-aware finance actions and transaction traceability so money movement stays tied to contract state.</p>
+      </section>
+
+      <section className="case-section container">
+        <div className="case-section-label">TECH STACK</div>
+        <div className="impact-grid">
+          <article><strong>Next.js + React</strong><p>Product interfaces, route structure and responsive user workflows.</p></article>
+          <article><strong>TypeScript</strong><p>Typed product logic across contracts, finance states, permissions and UI behavior.</p></article>
+          <article><strong>Supabase + PostgreSQL</strong><p>Authentication, relational data, application state and secure access patterns.</p></article>
+          <article><strong>Docker + Vercel</strong><p>Local environment support, deployment workflows and production-oriented iteration.</p></article>
+        </div>
       </section>
 
       <section className="case-section container">
