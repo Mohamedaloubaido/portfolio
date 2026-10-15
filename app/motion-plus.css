@@ -1,0 +1,238 @@
+/* Advanced motion pass: scroll depth, case-study reveals and refined micro-interactions */
+@keyframes motionGlowDrift {
+  0%, 100% { transform: translate3d(0,0,0) scale(1); opacity: .55; }
+  50% { transform: translate3d(-34px,38px,0) scale(1.08); opacity: .8; }
+}
+@keyframes motionSweep {
+  0% { transform: translateX(-120%); opacity: 0; }
+  18% { opacity: .5; }
+  100% { transform: translateX(240%); opacity: 0; }
+}
+@keyframes motionFloatTiny {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+@keyframes motionFadeScale {
+  from { opacity: 0; transform: translateY(30px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes motionSlideLeft {
+  from { opacity: 0; transform: translateX(-24px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes motionSlideRight {
+  from { opacity: 0; transform: translateX(24px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes motionGridShift {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 32px 32px, 32px 32px; }
+}
+@keyframes motionGoldPulse {
+  0%,100% { border-color: rgba(212,168,95,.25); box-shadow: 0 0 0 rgba(212,168,95,0); }
+  50% { border-color: rgba(212,168,95,.58); box-shadow: 0 0 32px rgba(212,168,95,.05); }
+}
+@keyframes motionNodePulse {
+  0%,100% { border-color: rgba(184,255,99,.11); background: rgba(184,255,99,.035); }
+  50% { border-color: rgba(184,255,99,.30); background: rgba(184,255,99,.075); }
+}
+@keyframes motionArrow {
+  0%,100% { transform: translate(0,0); }
+  50% { transform: translate(4px,-4px); }
+}
+@keyframes motionHeroScroll {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(58px); opacity: .76; }
+}
+@keyframes motionPanelScroll {
+  from { transform: translateY(0) rotateX(0deg); }
+  to { transform: translateY(-18px) rotateX(1.2deg); }
+}
+
+/* Homepage ambient depth */
+.dev-home { position: relative; isolation: isolate; overflow: clip; }
+.dev-home::before {
+  content: '';
+  position: fixed;
+  z-index: -1;
+  width: 520px;
+  height: 520px;
+  right: -160px;
+  top: 18vh;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(115,199,255,.055), transparent 67%);
+  pointer-events: none;
+  animation: motionGlowDrift 14s ease-in-out infinite;
+}
+.dev-tech-strip { position: relative; overflow: hidden; }
+.dev-tech-strip::after {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 -25%;
+  width: 22%;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(184,255,99,.06), transparent);
+  animation: motionSweep 8s ease-in-out infinite 1.5s;
+}
+.dev-window-bar i:nth-child(1), .dev-panel-top i:nth-child(1) { animation: motionFloatTiny 3.7s ease-in-out infinite; }
+.dev-window-bar i:nth-child(2), .dev-panel-top i:nth-child(2) { animation: motionFloatTiny 3.7s ease-in-out infinite .18s; }
+.dev-window-bar i:nth-child(3), .dev-panel-top i:nth-child(3) { animation: motionFloatTiny 3.7s ease-in-out infinite .36s; }
+.dev-inbox-item:nth-of-type(3) { animation: motionFloatTiny 5.2s ease-in-out infinite .5s; }
+.dev-inbox-item:nth-of-type(4) { animation: motionFloatTiny 5.6s ease-in-out infinite 1s; }
+.dev-z-bottom span { animation: motionNodePulse 3.4s ease-in-out infinite; }
+.dev-record-table .head { position: relative; overflow: hidden; }
+.dev-record-table .head::after {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 -28%;
+  width: 18%;
+  background: linear-gradient(90deg, transparent, rgba(115,199,255,.09), transparent);
+  animation: motionSweep 7s ease-in-out infinite 2s;
+}
+
+@supports (animation-timeline: scroll()) {
+  .dev-hero-copy {
+    animation: motionHeroScroll 1s linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 650px;
+  }
+  .dev-hero-panel > * {
+    animation: motionPanelScroll 1s linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 700px;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .dev-project .dev-project-meta,
+  .dev-project .dev-project-body {
+    animation: motionFadeScale 1s cubic-bezier(.16,1,.3,1) both;
+    animation-timeline: view();
+    animation-range: entry 5% cover 26%;
+  }
+  .dev-project .dev-project-body { animation-range: entry 8% cover 30%; }
+  .dev-stack-card h3,
+  .dev-stack-card p,
+  .dev-stack-card > div {
+    animation: motionFadeScale .9s cubic-bezier(.16,1,.3,1) both;
+    animation-timeline: view();
+    animation-range: entry 12% cover 32%;
+  }
+}
+
+/* Case study first-load motion */
+.case-nav { animation: devFadeIn .5s ease both; }
+.case-hero .case-kicker { animation: devFadeUp .65s cubic-bezier(.2,.8,.2,1) .05s both; }
+.case-hero h1 { animation: devFadeUp .82s cubic-bezier(.16,1,.3,1) .12s both; }
+.case-hero .case-lead { animation: devFadeUp .82s cubic-bezier(.16,1,.3,1) .22s both; }
+.case-hero .case-meta-grid { animation: devFadeUp .82s cubic-bezier(.16,1,.3,1) .32s both; }
+.case-hero .case-live-link { animation: devFadeUp .72s cubic-bezier(.16,1,.3,1) .42s both; }
+.case-live-link span { display: inline-block; transition: transform .22s ease; }
+.case-live-link:hover span { transform: translate(3px,-3px); }
+.case-product-window,
+.mock-dashboard { animation: motionFadeScale .95s cubic-bezier(.16,1,.3,1) .16s both; }
+.case-product-window::before { animation: motionGridShift 11s linear infinite; }
+.tawadud-case-item.active { animation: motionFloatTiny 4.4s ease-in-out infinite; }
+.tawadud-case-chat header b,
+.tawadud-bubble.ai { animation: motionGoldPulse 3s ease-in-out infinite; }
+.tawadud-case-rail span:nth-of-type(1) { animation: motionFloatTiny 4.8s ease-in-out infinite; }
+.tawadud-case-rail span:nth-of-type(2) { animation: motionFloatTiny 5.2s ease-in-out infinite .5s; }
+.tawadud-case-rail span:nth-of-type(3) { animation: motionFloatTiny 5.6s ease-in-out infinite 1s; }
+.dash-cards div:nth-child(1) { animation: motionFloatTiny 5.1s ease-in-out infinite; }
+.dash-cards div:nth-child(2) { animation: motionFloatTiny 5.4s ease-in-out infinite .4s; }
+.dash-cards div:nth-child(3) { animation: motionFloatTiny 5.8s ease-in-out infinite .8s; }
+.dash-flow span:nth-of-type(2),
+.dash-flow span:nth-of-type(4) { animation: motionNodePulse 3.8s ease-in-out infinite; }
+.case-next b { display: inline-block; animation: motionArrow 2.6s ease-in-out infinite; }
+.case-photo::after {
+  content: '';
+  position: absolute;
+  inset: -15% auto -15% -28%;
+  width: 18%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.10), transparent);
+  transform: skewX(-16deg);
+  opacity: 0;
+  pointer-events: none;
+}
+.case-photo:hover::after { animation: motionSweep 1.1s ease both; }
+
+@supports (animation-timeline: view()) {
+  .case-section-label,
+  .case-two-col h2,
+  .case-copy,
+  .phase-card,
+  .system-card,
+  .flow-map > div,
+  .state-chain > div,
+  .impact-grid article,
+  .case-gallery-grid > div,
+  .case-stage-head,
+  .case-product-window,
+  .mock-dashboard {
+    opacity: 0;
+    animation: motionFadeScale 1s cubic-bezier(.16,1,.3,1) both;
+    animation-timeline: view();
+    animation-range: entry 7% cover 28%;
+  }
+  .case-two-col h2 { animation-name: motionSlideLeft; }
+  .case-copy { animation-name: motionSlideRight; }
+  .phase-card:nth-child(2), .system-card:nth-child(2), .impact-grid article:nth-child(2) { animation-range: entry 11% cover 31%; }
+  .phase-card:nth-child(3), .system-card:nth-child(3), .impact-grid article:nth-child(3) { animation-range: entry 15% cover 34%; }
+  .phase-card:nth-child(4), .system-card:nth-child(4), .impact-grid article:nth-child(4) { animation-range: entry 19% cover 37%; }
+  .case-photo img {
+    animation: caseImageSettle 1s linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 70%;
+  }
+}
+@keyframes caseImageSettle {
+  from { transform: scale(1.045) translateY(10px); }
+  to { transform: scale(1) translateY(0); }
+}
+
+/* Resume motion */
+.resume-toolbar { animation: devFadeIn .5s ease both; }
+.resume-dev-role { animation: devFadeUp .62s ease .05s both; }
+.resume-dev-hero h1 { animation: devFadeUp .8s cubic-bezier(.16,1,.3,1) .12s both; }
+.resume-dev-summary { animation: devFadeUp .8s cubic-bezier(.16,1,.3,1) .2s both; }
+.resume-contact { animation: motionSlideRight .8s cubic-bezier(.16,1,.3,1) .24s both; }
+@supports (animation-timeline: view()) {
+  .resume-block > h2,
+  .resume-project-card,
+  .resume-skill-group,
+  .resume-block .impact-grid article,
+  .resume-columns > div {
+    opacity: 0;
+    animation: motionFadeScale .95s cubic-bezier(.16,1,.3,1) both;
+    animation-timeline: view();
+    animation-range: entry 8% cover 30%;
+  }
+  .resume-project-card:nth-child(even), .resume-columns > div:nth-child(2) { animation-range: entry 12% cover 33%; }
+}
+
+@media (hover: none) {
+  .case-photo:hover img,
+  .flow-map > div:hover,
+  .state-chain div:hover,
+  .resume-project-card:hover { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dev-home *, .dev-home *::before, .dev-home *::after,
+  .case-page *, .case-page *::before, .case-page *::after,
+  .resume-page *, .resume-page *::before, .resume-page *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .case-section-label, .case-two-col h2, .case-copy, .phase-card, .system-card,
+  .flow-map > div, .state-chain > div, .impact-grid article, .case-gallery-grid > div,
+  .case-stage-head, .case-product-window, .mock-dashboard,
+  .resume-block > h2, .resume-project-card, .resume-skill-group,
+  .resume-block .impact-grid article, .resume-columns > div {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
