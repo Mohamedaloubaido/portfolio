@@ -1,5 +1,3 @@
-import { Base64Image } from "../../components/Base64Asset";
-
 export const metadata = {
   title: "NAQSHA Case Study | Mohammed Al-Obaido",
   description: "NAQSHA, a custom-printing e-commerce product case study by Mohammed Al-Obaido.",
@@ -28,23 +26,6 @@ export default function NaqshaCaseStudy() {
           <div><span>ROLE</span><strong>Full-Stack Product Builder</strong></div>
           <div><span>FOCUS</span><strong>E-commerce UX · Product Logic · Customization Workflows</strong></div>
           <div><span>STACK</span><strong>Next.js · React · TypeScript · Responsive UI · Vercel</strong></div>
-        </div>
-      </section>
-
-      <section className="case-gallery">
-        <div className="container case-gallery-grid">
-          <div>
-            <div className="case-photo">
-              <Base64Image dataPath="/assets/naqsha-cover.webp.b64" alt="NAQSHA product and campaign collection" />
-            </div>
-            <div className="case-caption"><span>PRODUCT SYSTEM / COMMERCE</span><span>NAQSHA · 2026</span></div>
-          </div>
-          <div>
-            <div className="case-photo portrait">
-              <Base64Image dataPath="/assets/naqsha-editorial.webp.b64" alt="NAQSHA editorial fashion campaign" />
-            </div>
-            <div className="case-caption"><span>VISUAL DIRECTION</span><span>SYRIAN-CONTEMPORARY</span></div>
-          </div>
         </div>
       </section>
 
@@ -80,6 +61,16 @@ export default function NaqshaCaseStudy() {
           <div><span>03</span><strong>Approve proof</strong><small>Confirmation gate before fulfilment</small></div>
           <b>→</b>
           <div><span>04</span><strong>Fulfil</strong><small>Production, support, delivery and returns</small></div>
+        </div>
+      </section>
+
+      <section className="case-section container">
+        <div className="case-section-label">TECH STACK</div>
+        <div className="impact-grid">
+          <article><strong>Next.js + React</strong><p>Storefront and workflow interfaces designed around fast, understandable customer actions.</p></article>
+          <article><strong>TypeScript</strong><p>Product and customization logic with clearer states, options and validation rules.</p></article>
+          <article><strong>Responsive UI</strong><p>Flows designed to stay usable across desktop and mobile shopping contexts.</p></article>
+          <article><strong>Vercel</strong><p>Deployment and iteration around a production-oriented web application workflow.</p></article>
         </div>
       </section>
 
