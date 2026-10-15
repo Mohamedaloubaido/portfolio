@@ -27,6 +27,19 @@ const projects = [
   },
   {
     index: "03",
+    title: "WORKGRID",
+    status: "SOURCE + CASE STUDY",
+    type: "Project Management SaaS Backend",
+    description:
+      "A multi-tenant project management API built around JWT authentication, workspace-scoped RBAC, PostgreSQL relationships, audit logs, validation, tests, Docker and automated quality gates.",
+    stack: ["Fastify", "TypeScript", "PostgreSQL", "Prisma", "JWT", "RBAC", "Docker"],
+    caseUrl: "/work/workgrid",
+    liveUrl: null,
+    githubUrl: "https://github.com/Mohamedaloubaido/workgrid",
+    visual: "workgrid",
+  },
+  {
+    index: "04",
     title: "EMPLOYEE RECORDS",
     status: "LIVE + SOURCE",
     type: "Data Management Dashboard",
@@ -39,7 +52,7 @@ const projects = [
     visual: "records",
   },
   {
-    index: "04",
+    index: "05",
     title: "NAQSHA",
     status: "CASE STUDY",
     type: "E-commerce Experience",
@@ -132,6 +145,26 @@ function ProjectVisual({ kind }: { kind: string }) {
     );
   }
 
+  if (kind === "workgrid") {
+    return (
+      <div className="dev-visual dev-visual-zorvenaq" aria-hidden="true">
+        <div className="dev-window-bar"><i /><i /><i /><span>api / workspace architecture</span></div>
+        <div className="dev-zorvenaq-layout">
+          <div className="dev-z-side"><b>W</b><span>Auth</span><span>RBAC</span><span>Projects</span><span>Audit</span></div>
+          <div className="dev-z-main">
+            <div className="dev-z-title"><small>MULTI-TENANT API</small><strong>Workspace boundary</strong><span>Protected</span></div>
+            <div className="dev-milestones">
+              <article><small>01</small><b>Request</b><span>Validated</span></article>
+              <article className="active"><small>02</small><b>Authorize</b><span>RBAC</span></article>
+              <article><small>03</small><b>Persist</b><span>PostgreSQL</span></article>
+            </div>
+            <div className="dev-z-bottom"><span>Quality gates</span><b>TYPE SAFE</b><i>Tests · Docker · CI</i></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (kind === "records") {
     return (
       <div className="dev-visual dev-visual-records" aria-hidden="true">
@@ -152,7 +185,7 @@ function ProjectVisual({ kind }: { kind: string }) {
     <div className="dev-visual dev-visual-naqsha" aria-hidden="true">
       <div className="dev-naqsha-copy"><small>CUSTOM PRINT / 2026</small><strong>Wear your idea.</strong><span>Contemporary products, built around personal expression.</span></div>
       <div className="dev-shirt"><div>NQ</div></div>
-      <div className="dev-naqsha-index">04</div>
+      <div className="dev-naqsha-index">05</div>
     </div>
   );
 }
