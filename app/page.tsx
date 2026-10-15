@@ -1,285 +1,311 @@
-import { Base64Image, DownloadResumeButton } from "./components/Base64Asset";
-
-const experience = [
+const projects = [
   {
-    role: "Data Entry & Complaints Operations",
-    company: "Ministry of Interior — Damascus, Syria",
-    period: "Apr 2026 — Present",
-    summary:
-      "Process, document and follow up on complaints while validating data, updating records and preparing periodic reports within approved procedures.",
-    highlights: ["6,000+ complaints", "Case follow-up", "Record verification", "Reporting"],
+    index: "01",
+    title: "TAWADUD",
+    status: "LIVE PRODUCT",
+    type: "AI Customer Experience SaaS",
+    description:
+      "A full-stack customer experience platform with grounded AI answers, shared inbox workflows, knowledge management, human handoff, analytics and multi-workspace access controls.",
+    stack: ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL", "OpenAI", "Vercel"],
+    caseUrl: "/work/tawadud",
+    liveUrl: "https://gettawadud.com",
+    githubUrl: null,
+    visual: "tawadud",
   },
   {
-    role: "Currency Exchange & Remittance Officer",
-    company: "Al-Hussein Exchange & Remittances",
-    period: "Jun 2025 — Jun 2026",
-    summary:
-      "Processed remittances and local and foreign currency exchange transactions, with daily reconciliation, balance follow-up and financial reporting.",
-    highlights: ["10,000+ remittances", "50,000+ exchange transactions", "Reconciliation", "Financial reporting"],
+    index: "02",
+    title: "ZORVENAQ",
+    status: "IN DEVELOPMENT",
+    type: "Freelance Marketplace",
+    description:
+      "A marketplace system covering matching, applications, offers, contracts, milestones, workspaces, disputes, role-based administration and internal wallet flows.",
+    stack: ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL", "Docker", "RBAC"],
+    caseUrl: "/work/zorvenaq",
+    liveUrl: null,
+    githubUrl: null,
+    visual: "zorvenaq",
   },
   {
-    role: "Data Entry Specialist",
-    company: "New Horizons Student Services — Istanbul, Türkiye",
-    period: "2019 — Mar 2026",
-    summary:
-      "Managed high-volume student application records, CRM updates, data verification and administrative processing for private-university applications.",
-    highlights: ["50,000+ records/month", "99%+ accuracy", "CRM operations", "Data quality"],
+    index: "03",
+    title: "EMPLOYEE RECORDS",
+    status: "LIVE + SOURCE",
+    type: "Data Management Dashboard",
+    description:
+      "A responsive employee-management application with persistent CRUD, search, multi-filtering, sorting, pagination, department reporting and CSV export.",
+    stack: ["React", "TypeScript", "Vite", "LocalStorage", "Responsive UI", "Vercel"],
+    caseUrl: null,
+    liveUrl: "https://employee-records-dashboard.vercel.app",
+    githubUrl: "https://github.com/Mohamedaloubaido/employee-records-dashboard",
+    visual: "records",
   },
   {
-    role: "Data Entry Representative",
-    company: "Apply for Free — Istanbul, Türkiye",
-    period: "2018 — 2019",
-    summary:
-      "Maintained customer, invoice and daily operational records, prepared administrative reports and handled confidential information.",
-    highlights: ["Record management", "Administrative reports", "Data verification"],
+    index: "04",
+    title: "NAQSHA",
+    status: "CASE STUDY",
+    type: "E-commerce Experience",
+    description:
+      "A custom-printing commerce concept shaped around product discovery, customization, proof approval, support flows and a consistent responsive storefront experience.",
+    stack: ["E-commerce", "UX", "Product Flows", "Responsive Design", "AI-assisted Development"],
+    caseUrl: "/work/naqsha",
+    liveUrl: null,
+    githubUrl: null,
+    visual: "naqsha",
   },
 ];
 
-const projects = [
+const stackGroups = [
   {
     number: "01",
-    title: "TAWADUD",
-    href: "/work/tawadud",
-    liveUrl: "https://gettawadud.com",
-    image: null,
-    imageAlt: "",
-    type: "AI Customer Experience · SaaS · Full-Stack Development",
-    headline: "AI answers. Humans step in. Everything stays connected.",
-    description:
-      "An AI customer experience platform I designed and developed using AI-assisted workflows. It combines a website chatbot, a shared inbox, a company knowledge base, human handoff and conversation analytics, with Arabic and English conversations grounded in approved knowledge.",
-    contribution: [
-      "Designed and developed the product interface, website widget and customer-to-operator conversation flows.",
-      "Implemented knowledge import and indexing, grounded AI answers, shared inbox assignment and human takeover.",
-      "Built workspace access controls and account security, tested product flows and deployed the platform on Vercel.",
-    ],
-    stack: ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL", "OpenAI", "Vercel"],
+    title: "Frontend",
+    description: "Interfaces that stay fast, responsive and easy to understand.",
+    items: ["Next.js", "React", "TypeScript", "Responsive UI", "Component Systems"],
   },
-
   {
     number: "02",
-    title: "NAQSHA",
-    href: "/work/naqsha",
-    image: "/assets/naqsha-cover.webp.b64",
-    imageAlt: "NAQSHA fashion campaign and product presentation",
-    type: "E-commerce · Product Operations · Brand System",
-    headline: "Turning a custom-printing concept into a structured customer journey.",
-    description:
-      "NAQSHA is a Syrian contemporary custom-printing brand and commerce platform. My work spans business requirements, product flows, store UX, customization logic, proof approval, returns, customer support and launch content direction.",
-    contribution: [
-      "Mapped customer journeys from product selection through customization and order handling.",
-      "Defined operational requirements for proof approval, returns, support and custom-design requests.",
-      "Directed UX and brand consistency across the store and campaign assets.",
-    ],
-    stack: ["Product Operations", "E-commerce", "UX", "Workflow Design", "AI-assisted execution"],
+    title: "Backend & Data",
+    description: "Application logic, data models and secure access patterns.",
+    items: ["Supabase", "PostgreSQL", "SQL", "REST APIs", "Auth", "RLS / RBAC"],
   },
   {
     number: "03",
-    title: "Zorvenaq",
-    href: "/work/zorvenaq",
-    image: "/assets/zorvenaq-cover.webp.b64",
-    imageAlt: "Zorvenaq marketplace visual journey",
-    type: "Marketplace · Product QA · Workflow Architecture",
-    headline: "Designing operational logic for a freelance marketplace.",
-    description:
-      "A freelance platform covering matching, applications, offers, contracts, milestones, workspace operations, disputes and internal finance concepts. My role centers on requirements, workflow design, testing, QA and product iteration.",
-    contribution: [
-      "Structured end-to-end hiring and contract workflows for clients and freelancers.",
-      "Specified wallet, escrow, deposit, withdrawal and administration requirements.",
-      "Tested product flows, identified failures and iterated on usability and operational rules.",
-    ],
-    stack: ["Next.js", "React", "TypeScript", "Supabase", "Product QA", "Requirements"],
-  },
-  {
-    number: "04",
-    title: "Operations & Reporting Systems",
-    href: null,
-    image: null,
-    imageAlt: "",
-    type: "Data · Administration · Process Control",
-    headline: "Making administrative work easier to trace, review and improve.",
-    description:
-      "A collection of spreadsheet models, complaint-classification systems, employee-evaluation frameworks and reporting templates built around accuracy, accountability and operational visibility.",
-    contribution: [
-      "Designed structured records and reporting formats for recurring administrative work.",
-      "Built classification approaches for complaints, delays and operational issues.",
-      "Introduced traceability concepts to identify where errors originated in a process.",
-    ],
-    stack: ["Excel", "Google Sheets", "Reporting", "Data Quality", "Process Design"],
-  },
-  {
-    number: "05",
-    title: "Employee Records Dashboard",
-    href: null,
-    liveUrl: "https://employee-records-dashboard.vercel.app",
-    githubUrl: "https://github.com/Mohamedaloubaido/employee-records-dashboard",
-    image: null,
-    imageAlt: "",
-    type: "React · TypeScript · Data Management",
-    headline: "A practical employee-record system built around fast search, clean data and operational visibility.",
-    description:
-      "A responsive employee records dashboard for managing staff data, status and department structure. It includes persistent browser storage, CRUD operations, search, filters, sorting, pagination, department analytics, reports and CSV export.",
-    contribution: [
-      "Built add, edit, view and delete flows with persistent LocalStorage data.",
-      "Implemented search, multi-filtering, sorting, pagination and CSV export.",
-      "Added department and workforce reporting views with responsive UI behavior.",
-    ],
-    stack: ["React", "TypeScript", "Vite", "LocalStorage", "Responsive UI", "Vercel"],
+    title: "Shipping",
+    description: "From local development to a testable, deployed product.",
+    items: ["Git / GitHub", "Vercel", "Docker", "Sentry", "Testing", "Product QA"],
   },
 ];
 
-const capabilityGroups = [
-  {
-    title: "Data & CRM",
-    items: ["Data Entry", "CRM Operations", "Data Verification", "Data Quality", "Excel", "Google Sheets"],
-  },
-  {
-    title: "Operations",
-    items: ["Administrative Reporting", "Case Follow-up", "Reconciliation", "Process Improvement", "Quality Control", "Workflow Design"],
-  },
-  {
-    title: "Digital",
-    items: ["Next.js", "React", "TypeScript", "Supabase", "Product QA", "AI-assisted Workflows"],
-  },
+const engineeringScope = [
+  ["Authentication", "Accounts, sessions and protected product areas."],
+  ["Authorization", "Role-based permissions and workspace access rules."],
+  ["Data modeling", "Structured relational data and operational state."],
+  ["AI integration", "Grounded answers, knowledge flows and human handoff."],
+  ["Product workflows", "Multi-step states that remain understandable to users."],
+  ["Deployment", "Production-minded builds, monitoring and iteration."],
 ];
 
-const stats = [
-  { value: "7+", label: "Years across data and administrative work" },
-  { value: "99%+", label: "Accuracy maintained in high-volume data workflows" },
-  { value: "50K+", label: "Records handled monthly at peak volume" },
-];
+function Arrow() {
+  return <span aria-hidden="true">↗</span>;
+}
+
+function ProjectVisual({ kind }: { kind: string }) {
+  if (kind === "tawadud") {
+    return (
+      <div className="dev-visual dev-visual-tawadud" aria-hidden="true">
+        <div className="dev-window-bar"><i /><i /><i /><span>workspace / inbox</span></div>
+        <div className="dev-tawadud-layout">
+          <div className="dev-rail"><b>T</b><span /><span /><span /></div>
+          <div className="dev-inbox-list">
+            <small>INBOX</small>
+            <strong>Conversations</strong>
+            <div className="dev-inbox-item active"><i /><p><b>Website inquiry</b><span>AI answered · now</span></p></div>
+            <div className="dev-inbox-item"><i /><p><b>Product question</b><span>Assigned · 4m</span></p></div>
+            <div className="dev-inbox-item"><i /><p><b>Support request</b><span>Human handoff · 9m</span></p></div>
+          </div>
+          <div className="dev-conversation">
+            <div className="dev-conversation-head"><span>Customer conversation</span><b>AI ACTIVE</b></div>
+            <div className="dev-message customer">Can I get more details about the service?</div>
+            <div className="dev-message ai">Absolutely. Here&apos;s a concise answer grounded in the company knowledge base.</div>
+            <div className="dev-composer">Reply or take over… <span>↵</span></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (kind === "zorvenaq") {
+    return (
+      <div className="dev-visual dev-visual-zorvenaq" aria-hidden="true">
+        <div className="dev-window-bar"><i /><i /><i /><span>marketplace / contract</span></div>
+        <div className="dev-zorvenaq-layout">
+          <div className="dev-z-side"><b>Z</b><span>Overview</span><span>Projects</span><span>Contracts</span><span>Wallet</span></div>
+          <div className="dev-z-main">
+            <div className="dev-z-title"><small>ACTIVE CONTRACT</small><strong>Website Redesign</strong><span>Healthy</span></div>
+            <div className="dev-milestones">
+              <article><small>01</small><b>Discovery</b><span>Completed</span></article>
+              <article className="active"><small>02</small><b>Build</b><span>In progress</span></article>
+              <article><small>03</small><b>QA</b><span>Upcoming</span></article>
+            </div>
+            <div className="dev-z-bottom"><span>Escrow secured</span><b>$1,850</b><i>Milestone 2 of 3</i></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (kind === "records") {
+    return (
+      <div className="dev-visual dev-visual-records" aria-hidden="true">
+        <div className="dev-window-bar"><i /><i /><i /><span>employees / dashboard</span></div>
+        <div className="dev-records-head"><div><small>WORKFORCE</small><strong>Employee Records</strong></div><button>+ Add employee</button></div>
+        <div className="dev-record-stats"><article><span>Total</span><b>128</b></article><article><span>Active</span><b>112</b></article><article><span>Departments</span><b>8</b></article></div>
+        <div className="dev-record-table">
+          <div className="head"><span>Employee</span><span>Department</span><span>Status</span></div>
+          <div><span><i />M. Carter</span><span>Engineering</span><b>Active</b></div>
+          <div><span><i />S. Ahmed</span><span>Product</span><b>Active</b></div>
+          <div><span><i />L. Martin</span><span>Operations</span><b>Active</b></div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="dev-visual dev-visual-naqsha" aria-hidden="true">
+      <div className="dev-naqsha-copy"><small>CUSTOM PRINT / 2026</small><strong>Wear your idea.</strong><span>Contemporary products, built around personal expression.</span></div>
+      <div className="dev-shirt"><div>NQ</div></div>
+      <div className="dev-naqsha-index">04</div>
+    </div>
+  );
+}
 
 export default function Home() {
   return (
-    <main id="top">
-      <header className="nav-wrap">
-        <nav className="nav container" aria-label="Primary navigation">
-          <a className="brand" href="#top" aria-label="Mohammed Al-Obaido home">M<span>/</span>A</a>
-          <div className="nav-links">
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
+    <main className="dev-home" id="top">
+      <header className="dev-nav-shell">
+        <nav className="dev-nav dev-container" aria-label="Primary navigation">
+          <a className="dev-brand" href="#top" aria-label="Mohammed Al-Obaido home"><span>~/</span>mohammed</a>
+          <div className="dev-nav-links">
             <a href="#work">Work</a>
-            <a href="#capabilities">Capabilities</a>
-            <a href="/resume">Resume</a>
+            <a href="#stack">Stack</a>
+            <a href="#about">About</a>
           </div>
-          <a className="nav-cta" href="#contact">Let&apos;s talk ↗</a>
+          <div className="dev-nav-actions">
+            <a className="dev-nav-github" href="https://github.com/Mohamedaloubaido" target="_blank" rel="noreferrer">GitHub <Arrow /></a>
+            <a className="dev-nav-cta" href="#contact">Let&apos;s build <Arrow /></a>
+          </div>
         </nav>
       </header>
 
-      <section className="hero container">
-        <div className="hero-grid">
-          <div>
-            <div className="status"><span /> Open to international opportunities</div>
-            <p className="kicker">DATA · CRM · OPERATIONS · ADMINISTRATION</p>
-            <h1>Mohammed<br /><em>Al-Obaido</em></h1>
-          </div>
-
-          <div className="hero-side">
-            <p>I turn high-volume information and operational complexity into <strong>accurate records, clear workflows and practical systems.</strong></p>
-            <div className="hero-actions">
-              <a className="button primary" href="#work">Explore selected work <span>↘</span></a>
-              <DownloadResumeButton className="button ghost" />
-              <a className="button ghost" href="mailto:obedomohammed@gmail.com">Email me ↗</a>
-            </div>
+      <section className="dev-hero dev-container">
+        <div className="dev-hero-copy">
+          <div className="dev-status"><span /> Available for full-stack opportunities</div>
+          <p className="dev-eyebrow">FULL-STACK DEVELOPER · PRODUCT BUILDER</p>
+          <h1>I build web products<br />from <em>interface</em> to infrastructure.</h1>
+          <p className="dev-hero-lead">
+            I design and develop modern web applications with Next.js, React, TypeScript and PostgreSQL — turning product ideas into working systems with real workflows, secure data and deployable code.
+          </p>
+          <div className="dev-hero-actions">
+            <a className="dev-button dev-button-primary" href="#work">View selected work <span>↓</span></a>
+            <a className="dev-button dev-button-secondary" href="https://github.com/Mohamedaloubaido" target="_blank" rel="noreferrer">GitHub profile <Arrow /></a>
           </div>
         </div>
 
-        <div className="hero-footer">
-          <span>Based in Syria · Open to relocation & remote work</span>
-          <span>Arabic · English · Turkish</span>
-          <a href="https://github.com/Mohamedaloubaido" target="_blank" rel="noreferrer">GitHub ↗</a>
-        </div>
-      </section>
-
-      <section className="stats-band" aria-label="Career highlights">
-        <div className="container stats-grid">
-          {stats.map((stat) => <div className="stat" key={stat.value}><strong>{stat.value}</strong><span>{stat.label}</span></div>)}
-        </div>
-      </section>
-
-      <section className="section container" id="about">
-        <div className="section-head"><span className="section-index">01</span><span className="section-label">Profile</span></div>
-        <div className="about-grid">
-          <h2>Accuracy first.<br />Systems second.<br /><em>Always practical.</em></h2>
-          <div className="body-copy">
-            <p className="lead">I am a data and operations professional with experience spanning high-volume record processing, CRM administration, complaint follow-up, reporting, reconciliation and customer-facing operations.</p>
-            <p>Alongside my administrative work, I develop and test digital product ideas using AI-assisted development workflows. That gives me a useful perspective: I understand both the person using a process and the operational structure behind it.</p>
-            <p>I work best where information must stay organized, mistakes have real consequences and processes need to become clearer, faster and easier to audit.</p>
+        <div className="dev-hero-panel" aria-label="Developer profile summary">
+          <div className="dev-panel-top"><span><i /><i /><i /></span><b>profile.ts</b><small>main</small></div>
+          <div className="dev-code-card">
+            <p><span className="token-purple">const</span> <span className="token-blue">developer</span> = {'{'}</p>
+            <p className="indent">name: <span className="token-green">&quot;Mohammed Al-Obaido&quot;</span>,</p>
+            <p className="indent">role: <span className="token-green">&quot;Full-Stack Developer&quot;</span>,</p>
+            <p className="indent">focus: [</p>
+            <p className="indent-2"><span className="token-green">&quot;Web Apps&quot;</span>, <span className="token-green">&quot;SaaS&quot;</span>, <span className="token-green">&quot;AI Products&quot;</span></p>
+            <p className="indent">],</p>
+            <p className="indent">shipping: <span className="token-green">&quot;TAWADUD&quot;</span>,</p>
+            <p className="indent">available: <span className="token-orange">true</span>,</p>
+            <p>{'}'}</p>
           </div>
+          <div className="dev-panel-footer"><span><i /> build passing</span><span>Next.js · TypeScript · PostgreSQL</span></div>
         </div>
       </section>
 
-      <section className="section container" id="experience">
-        <div className="section-head"><span className="section-index">02</span><span className="section-label">Experience</span></div>
-        <div className="experience-list">
-          {experience.map((item) => (
-            <article className="experience-row" key={`${item.company}-${item.role}`}>
-              <div className="period">{item.period}</div>
-              <div className="experience-main"><h3>{item.role}</h3><div className="company">{item.company}</div><p>{item.summary}</p></div>
-              <div className="mini-tags">{item.highlights.map((tag) => <span key={tag}>{tag}</span>)}</div>
+      <section className="dev-tech-strip" aria-label="Primary technology stack">
+        <div className="dev-container dev-tech-row">
+          {['NEXT.JS', 'REACT', 'TYPESCRIPT', 'POSTGRESQL', 'SUPABASE', 'DOCKER', 'VERCEL'].map((item) => <span key={item}>{item}</span>)}
+        </div>
+      </section>
+
+      <section className="dev-section dev-container" id="work">
+        <div className="dev-section-heading">
+          <div><span className="dev-section-number">01</span><p className="dev-eyebrow">SELECTED WORK</p></div>
+          <h2>Products, not practice pages.</h2>
+          <p>Projects where I worked across product logic, interface design, data, permissions, workflows, testing and deployment.</p>
+        </div>
+
+        <div className="dev-projects">
+          {projects.map((project) => (
+            <article className="dev-project" key={project.title}>
+              <div className="dev-project-meta">
+                <span>{project.index}</span>
+                <span>{project.type}</span>
+                <b>{project.status}</b>
+              </div>
+              <ProjectVisual kind={project.visual} />
+              <div className="dev-project-body">
+                <div>
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                </div>
+                <div className="dev-project-side">
+                  <div className="dev-tags">{project.stack.map((item) => <span key={item}>{item}</span>)}</div>
+                  <div className="dev-project-links">
+                    {project.caseUrl && <a href={project.caseUrl}>Case study <Arrow /></a>}
+                    {project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noreferrer">Live project <Arrow /></a>}
+                    {project.githubUrl && <a href={project.githubUrl} target="_blank" rel="noreferrer">Source code <Arrow /></a>}
+                  </div>
+                </div>
+              </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="work-section" id="work">
-        <div className="container">
-          <div className="section-head light-head"><span className="section-index">03</span><span className="section-label">Selected work</span></div>
-          <div className="work-intro">
-            <h2>Selected systems,<br />products & workflows.</h2>
-            <p>Projects shown here cover the products I designed and developed, alongside requirements, workflow logic, operations, QA and usability.</p>
+      <section className="dev-section dev-stack-section" id="stack">
+        <div className="dev-container">
+          <div className="dev-section-heading compact">
+            <div><span className="dev-section-number">02</span><p className="dev-eyebrow">TECHNICAL STACK</p></div>
+            <h2>Tools I use to ship.</h2>
           </div>
-
-          <div className="projects">
-            {projects.map((project) => (
-              <article className="project-card" key={project.title}>
-                <div className="project-topline"><span>{project.number}</span><span>{project.type}</span></div>
-                <div className="project-layout">
-                  <div>
-                    <h3>{project.title}</h3>
-                    <p className="project-headline">{project.headline}</p>
-                    {project.href && <a className="project-case-link" href={project.href}>View full case study ↗</a>}
-                    {project.liveUrl && <a className="project-case-link" href={project.liveUrl} target="_blank" rel="noreferrer">Open live project ↗</a>}
-                    {project.githubUrl && <a className="project-case-link" href={project.githubUrl} target="_blank" rel="noreferrer">View source on GitHub ↗</a>}
-                    {project.image && (
-                      <div className="project-media">
-                        <Base64Image dataPath={project.image} alt={project.imageAlt} />
-                      </div>
-                    )}
-                  </div>
-                  <div className="project-details">
-                    <p>{project.description}</p>
-                    <div className="contribution"><span className="tiny-label">MY CONTRIBUTION</span><ul>{project.contribution.map((item) => <li key={item}>{item}</li>)}</ul></div>
-                    <div className="tags dark-tags">{project.stack.map((tag) => <span key={tag}>{tag}</span>)}</div>
-                  </div>
-                </div>
+          <div className="dev-stack-grid">
+            {stackGroups.map((group) => (
+              <article className="dev-stack-card" key={group.title}>
+                <span>{group.number}</span>
+                <h3>{group.title}</h3>
+                <p>{group.description}</p>
+                <div>{group.items.map((item) => <b key={item}>{item}</b>)}</div>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section container" id="capabilities">
-        <div className="section-head"><span className="section-index">04</span><span className="section-label">Capabilities</span></div>
-        <div className="capability-grid">
-          {capabilityGroups.map((group, index) => (
-            <article className="capability-card" key={group.title}><span className="cap-number">0{index + 1}</span><h3>{group.title}</h3><div className="cap-list">{group.items.map((item) => <span key={item}>{item}</span>)}</div></article>
-          ))}
-        </div>
-      </section>
-
-      <section className="contact-section" id="contact">
-        <div className="container contact-grid">
-          <div><span className="section-label">Available for the right opportunity</span><h2>Need someone who<br />cares about the details?</h2></div>
-          <div className="contact-side">
-            <p>I am interested in Data Entry, CRM, Operations, Administrative and selected product-support roles, including remote, freelance and relocation opportunities.</p>
-            <a className="email" href="mailto:obedomohammed@gmail.com">obedomohammed@gmail.com ↗</a>
-            <a className="text-link" href="/resume">View resume ↗</a><br />
-            <a className="text-link" href="https://github.com/Mohamedaloubaido" target="_blank" rel="noreferrer">GitHub profile ↗</a>
+      <section className="dev-section dev-container" id="about">
+        <div className="dev-about-grid">
+          <div className="dev-about-copy">
+            <div><span className="dev-section-number">03</span><p className="dev-eyebrow">HOW I BUILD</p></div>
+            <h2>I care about what happens after the UI looks good.</h2>
+            <p>
+              A polished screen is only the surface. I think about data structure, permissions, states, failure paths and how a feature behaves across the whole product. My strongest work is where frontend, backend and product logic have to meet cleanly.
+            </p>
+            <a href="/resume" className="dev-text-link">View resume <Arrow /></a>
+          </div>
+          <div className="dev-scope-list">
+            {engineeringScope.map(([title, text], index) => (
+              <article key={title}><span>0{index + 1}</span><div><h3>{title}</h3><p>{text}</p></div></article>
+            ))}
           </div>
         </div>
       </section>
 
-      <footer className="footer container"><span>© 2026 Mohammed Al-Obaido</span><a href="#top">Back to top ↑</a></footer>
+      <section className="dev-contact" id="contact">
+        <div className="dev-container dev-contact-grid">
+          <div>
+            <p className="dev-eyebrow">OPEN TO THE RIGHT OPPORTUNITY</p>
+            <h2>Have a product<br />worth shipping?</h2>
+          </div>
+          <div className="dev-contact-side">
+            <p>I&apos;m open to full-stack development opportunities, remote work and product-focused teams where I can keep building real systems end to end.</p>
+            <a className="dev-email" href="mailto:obedomohammed@gmail.com">obedomohammed@gmail.com <Arrow /></a>
+            <div className="dev-contact-links">
+              <a href="https://github.com/Mohamedaloubaido" target="_blank" rel="noreferrer">GitHub <Arrow /></a>
+              <a href="/resume">Resume <Arrow /></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="dev-footer dev-container">
+        <span>© 2026 Mohammed Al-Obaido</span>
+        <span>Built with Next.js + TypeScript</span>
+        <a href="#top">Back to top ↑</a>
+      </footer>
     </main>
   );
 }
