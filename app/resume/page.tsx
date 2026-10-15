@@ -1,45 +1,46 @@
 import PrintButton from "./PrintButton";
-import { DownloadResumeButton } from "../components/Base64Asset";
 
 export const metadata = {
-  title: "Resume | Mohammed Al-Obaido",
-  description: "Professional resume of Mohammed Al-Obaido.",
+  title: "Developer Resume | Mohammed Al-Obaido",
+  description: "Full-stack developer resume of Mohammed Al-Obaido.",
 };
 
-const roles = [
+const projects = [
   {
-    title: "Data Entry & Complaints Operations",
-    company: "Ministry of Interior — Damascus, Syria",
-    period: "Apr 2026 — Present",
-    bullets: [
-      "Processed, documented and followed up on 6,000+ complaints while validating data, updating records and preparing periodic reports.",
-    ],
+    name: "TAWADUD",
+    type: "AI Customer Experience SaaS",
+    href: "/work/tawadud",
+    body: "Designed and developed a multi-workspace customer experience platform with a website chatbot, shared inbox, grounded AI answers, knowledge ingestion, human handoff, analytics, roles and account security.",
+    tags: ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL", "OpenAI", "Vercel"],
   },
   {
-    title: "Currency Exchange & Remittance Officer",
-    company: "Al-Hussein Exchange & Remittances",
-    period: "Jun 2025 — Jun 2026",
-    bullets: [
-      "Processed and delivered 10,000+ remittances and completed 50,000+ local and foreign currency exchange transactions with verification and accuracy controls.",
-      "Performed daily, weekly and monthly cash/inventory reconciliation and prepared reports, accounts, balance follow-ups and financial settlements.",
-    ],
+    name: "ZORVENAQ",
+    type: "Freelance Marketplace",
+    href: "/work/zorvenaq",
+    body: "Built and iterated product workflows covering matching, applications, offers, contracts, milestones, workspaces, internal wallet flows, disputes, admin roles and auditability.",
+    tags: ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL", "Docker", "RBAC"],
   },
   {
-    title: "Data Entry Specialist",
-    company: "New Horizons Student Services — Istanbul, Türkiye",
-    period: "2019 — Mar 2026",
-    bullets: [
-      "Entered 50,000+ records per month with 99%+ accuracy and improved data-entry forms, contributing to a 40% reduction in errors.",
-    ],
+    name: "EMPLOYEE RECORDS",
+    type: "Data Management Dashboard",
+    href: "https://employee-records-dashboard.vercel.app",
+    external: true,
+    body: "Built a responsive employee-management application with persistent CRUD, search, filtering, sorting, pagination, department reporting and CSV export.",
+    tags: ["React", "TypeScript", "Vite", "LocalStorage", "Responsive UI"],
   },
   {
-    title: "Data Entry Representative",
-    company: "Apply for Free — Istanbul, Türkiye",
-    period: "2018 — 2019",
-    bullets: [
-      "Maintained customer, invoice and daily operational records, prepared administrative reports and protected confidential information.",
-    ],
+    name: "NAQSHA",
+    type: "Custom Printing E-commerce",
+    href: "/work/naqsha",
+    body: "Shaped storefront and admin workflows around product discovery, customization, proof approval, pricing logic, order states, responsive UX and operational edge cases.",
+    tags: ["Next.js", "React", "TypeScript", "E-commerce", "Product UX"],
   },
+];
+
+const strengths = [
+  ["Frontend", "Next.js, React, TypeScript, JavaScript, HTML/CSS, responsive UI, component-based interfaces."],
+  ["Backend & Data", "Supabase, PostgreSQL, SQL, authentication, RLS/RBAC, REST APIs, relational data modeling."],
+  ["Product & Shipping", "Git/GitHub, Vercel, Docker, Sentry, functional QA, AI integration, workflow design and deployment."],
 ];
 
 export default function ResumePage() {
@@ -48,51 +49,74 @@ export default function ResumePage() {
       <div className="resume-toolbar container">
         <a className="text-link" href="/">← Back to portfolio</a>
         <div className="resume-toolbar-actions">
-          <DownloadResumeButton className="resume-download" />
+          <a className="resume-download" href="https://github.com/Mohamedaloubaido" target="_blank" rel="noreferrer">GitHub ↗</a>
           <PrintButton />
         </div>
       </div>
 
-      <article className="resume-sheet">
-        <header className="resume-header">
-          <div>
-            <h1>Mohammed Al-Obaido</h1>
-            <p>AI-Assisted Digital Product Developer | Data & Operations Specialist</p>
-          </div>
-          <div className="resume-contact">
-            <span>Idlib, Syria</span><a href="tel:+963962531348">+963 962 531 348</a>
-            <a href="mailto:obedomohammed@gmail.com">obedomohammed@gmail.com</a>
-            <span>Open to Remote, Contract & GCC Relocation</span><a href="https://github.com/Mohamedaloubaido" target="_blank" rel="noreferrer">GitHub · Mohamedaloubaido</a>
-          </div>
-        </header>
-
-        <section className="resume-block">
-          <h2>Professional Summary</h2>
-          <p>Data and operations professional with 7+ years of experience in high-volume data entry, verification, reporting, transaction processing and complaint handling, complemented by hands-on work building AI-powered web products. Designed and developed TAWADUD, an AI customer experience platform. Strong in operational accuracy, requirements analysis, functional testing, defect tracking and structured data management.</p>
-        </section>
-
-        <section className="resume-block">
-          <h2>Professional Experience</h2>
-          {roles.map((role) => (
-            <div className="resume-role" key={role.title + role.company}>
-              <div className="resume-role-head"><strong>{role.title} | {role.company}</strong><span>{role.period}</span></div>
-              <ul>{role.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
+      <div className="resume-shell">
+        <article className="resume-sheet">
+          <header className="resume-dev-hero">
+            <div>
+              <div className="resume-dev-role">FULL-STACK DEVELOPER · PRODUCT BUILDER</div>
+              <h1>Mohammed<br />Al-Obaido</h1>
+              <p className="resume-dev-summary">I build modern web applications from interface to infrastructure, with a focus on SaaS products, AI-powered workflows, secure data, authentication, permissions and deployable product systems.</p>
             </div>
-          ))}
-        </section>
+            <div className="resume-contact">
+              <span>Syria · Open to remote and relocation</span>
+              <a href="mailto:obedomohammed@gmail.com">obedomohammed@gmail.com</a>
+              <a href="https://github.com/Mohamedaloubaido" target="_blank" rel="noreferrer">github.com/Mohamedaloubaido</a>
+              <span>Arabic · Turkish · English</span>
+            </div>
+          </header>
 
-        <section className="resume-block">
-          <h2>Selected Digital Projects</h2>
-          <div className="resume-role"><div className="resume-role-head"><strong><a href="/work/tawadud">TAWADUD | AI Customer Experience — Designer / Developer</a></strong><span>Oct 2026 — Present</span></div><ul><li>Designed and developed an AI customer experience platform using AI-assisted workflows with Next.js, React, TypeScript, Supabase/PostgreSQL and OpenAI, including a website chatbot, shared inbox, knowledge base and human handoff.</li><li>Implemented knowledge-grounded Arabic/English replies, conversation analytics, workspace access controls and account security; tested customer and operator workflows and deployed the platform on Vercel.</li></ul></div>
-          <div className="resume-role"><div className="resume-role-head"><strong>ZORVENAQ | Freelance Marketplace — Founder / Product Builder</strong><span>2026</span></div><ul><li>Led product development using AI-assisted tools: defined requirements, tested workflows, tracked defects and worked within a Next.js / React / TypeScript and Supabase / PostgreSQL environment.</li><li>Defined flows for offers, contracts, internal wallet, permissions and transaction handling, then reviewed and validated implementation before acceptance.</li></ul></div>
-          <div className="resume-role"><div className="resume-role-head"><strong>NAQSHA | Custom Printing E-commerce Store — Founder / Product Builder</strong><span>2026</span></div><ul><li>Led development of storefront and admin workflows, product customization, pricing logic and order flows using AI-assisted development.</li></ul></div>
-        </section>
+          <section className="resume-block">
+            <h2>SELECTED DEVELOPMENT WORK</h2>
+            <div className="resume-project-grid">
+              {projects.map((project) => (
+                <a className="resume-project-card" key={project.name} href={project.href} target={project.external ? "_blank" : undefined} rel={project.external ? "noreferrer" : undefined}>
+                  <small>{project.type.toUpperCase()}</small>
+                  <h3>{project.name} ↗</h3>
+                  <p>{project.body}</p>
+                  <div className="resume-tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+                </a>
+              ))}
+            </div>
+          </section>
 
-        <section className="resume-block resume-columns">
-          <div><h2>Skills & Tools</h2><p><strong>Data & Operations:</strong> Microsoft Excel, Google Sheets, data verification, reporting, reconciliation, record management, complaint handling.</p><p><strong>Digital Product Work:</strong> requirements analysis, functional testing, defect tracking, Git/GitHub, Supabase, Vercel, AI-assisted development tools.</p><p><strong>Practical Exposure:</strong> Next.js, React, TypeScript, JavaScript, PostgreSQL, SQL, Docker, Node.js/npm, HTML/CSS.</p></div>
-          <div><h2>Education & Languages</h2><p><strong>Education:</strong> Programming Diploma — Ataşehir Adıgüzel Meslek Yüksekokulu, Türkiye.</p><p><strong>Certifications:</strong> Professional Data Entry Certificate; Microsoft Excel — Advanced.</p><p><strong>Languages:</strong> Arabic — Native; Turkish — Good; English — Advanced.</p></div>
-        </section>
-      </article>
+          <section className="resume-block">
+            <h2>TECHNICAL STACK</h2>
+            <div className="resume-skill-grid">
+              {strengths.map(([title, body]) => (
+                <div className="resume-skill-group" key={title}><h3>{title}</h3><p>{body}</p></div>
+              ))}
+            </div>
+          </section>
+
+          <section className="resume-block">
+            <h2>ENGINEERING FOCUS</h2>
+            <div className="impact-grid">
+              <article><strong>Product workflows</strong><p>Multi-step application states, clear user actions, failure paths and admin operations.</p></article>
+              <article><strong>Authentication & access</strong><p>Accounts, sessions, multi-factor authentication, workspace permissions and role-based controls.</p></article>
+              <article><strong>Data & backend</strong><p>PostgreSQL-backed products, structured relational data, API-driven features and secure access patterns.</p></article>
+              <article><strong>AI integration</strong><p>Grounded answers, knowledge retrieval, human handoff and AI-assisted product workflows.</p></article>
+            </div>
+          </section>
+
+          <section className="resume-block resume-columns">
+            <div>
+              <h2>EDUCATION</h2>
+              <p><strong>Programming Diploma</strong><br />Türkiye</p>
+              <p>Continued hands-on development through production-oriented web projects, GitHub repositories and deployed applications.</p>
+            </div>
+            <div>
+              <h2>LANGUAGES & AVAILABILITY</h2>
+              <p><strong>Arabic:</strong> Native<br /><strong>Turkish:</strong> Good<br /><strong>English:</strong> Advanced</p>
+              <p><strong>Availability:</strong> Remote · Freelance · Contract · Full-time opportunities · GCC relocation</p>
+            </div>
+          </section>
+        </article>
+      </div>
     </main>
   );
 }
