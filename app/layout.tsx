@@ -5,6 +5,7 @@ import "./v2.css";
 import "./media.css";
 import "./dev.css";
 import "./animations.css";
+import "./case-dev.css";
 
 export const metadata: Metadata = {
   title: "Mohammed Al-Obaido | Full-Stack Developer",
