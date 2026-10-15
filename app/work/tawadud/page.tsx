@@ -12,61 +12,85 @@ const features = [
 
 export default function TawadudCaseStudy() {
   return (
-    <main className="case-page">
+    <main className="case-page case-tawadud">
       <header className="case-nav container">
-        <a className="brand" href="/" aria-label="Mohammed Al-Obaido home">M<span>/</span>A</a>
-        <a className="text-link" href="/#work">← Back to portfolio</a>
+        <a className="case-brand" href="/" aria-label="Mohammed Al-Obaido home"><span>~/</span>mohammed</a>
+        <a className="case-back" href="/#work">← Back to selected work</a>
       </header>
+
       <section className="case-hero container">
-        <div className="case-kicker">CASE STUDY · OCTOBER 2026</div>
+        <div className="case-kicker">CASE STUDY · AI SAAS · 2026</div>
         <h1>TAWADUD</h1>
-        <p className="case-lead">An AI customer experience platform that connects a website chatbot, company knowledge and human conversations.</p>
+        <p className="case-lead">A full-stack customer experience platform connecting an AI agent, company knowledge, shared conversations and human support in one system.</p>
         <div className="case-meta-grid">
-          <div><span>MY ROLE</span><strong>Designer / Developer · AI-assisted development</strong></div>
-          <div><span>FOCUS</span><strong>AI Agent · Shared Inbox · Knowledge · Human Handoff</strong></div>
-          <div><span>STACK</span><strong>Next.js · React · TypeScript · Supabase · OpenAI</strong></div>
+          <div><span>ROLE</span><strong>Full-Stack Developer · Product Designer</strong></div>
+          <div><span>SYSTEMS</span><strong>AI Agent · Shared Inbox · Knowledge · Human Handoff</strong></div>
+          <div><span>STACK</span><strong>Next.js · React · TypeScript · Supabase · PostgreSQL · OpenAI</strong></div>
         </div>
-        <a className="text-link tawadud-live-link" href="https://gettawadud.com" target="_blank" rel="noreferrer">Open TAWADUD ↗</a>
+        <a className="case-live-link" href="https://gettawadud.com" target="_blank" rel="noreferrer">Open live product <span>↗</span></a>
       </section>
-      <section className="tawadud-showcase">
+
+      <section className="case-stage">
         <div className="container">
-          <p className="case-kicker">AI CUSTOMER EXPERIENCE</p>
-          <h2>Better customer conversations,<br />handled intelligently.</h2>
-          <p>AI answers. Humans step in. Everything stays connected.</p>
-          <div className="tawadud-feature-labels"><span>AI AGENT</span><span>SHARED INBOX</span><span>KNOWLEDGE</span><span>HUMAN HANDOFF</span></div>
+          <div className="case-stage-head"><span>PRODUCT INTERFACE</span><span>AI + HUMAN WORKFLOW</span></div>
+          <div className="case-product-window">
+            <div className="case-window-bar"><i /><i /><i /><span>tawadud / workspace / inbox</span></div>
+            <div className="tawadud-case-ui">
+              <aside className="tawadud-case-rail"><b>T</b><span /><span /><span /></aside>
+              <div className="tawadud-case-list">
+                <small>SHARED INBOX</small>
+                <h3>Conversations</h3>
+                <div className="tawadud-case-item active"><strong>Website inquiry</strong>AI answered · now</div>
+                <div className="tawadud-case-item"><strong>Product question</strong>Assigned · 4m</div>
+                <div className="tawadud-case-item"><strong>Support request</strong>Human handoff · 9m</div>
+              </div>
+              <div className="tawadud-case-chat">
+                <header><span>Customer conversation</span><b>AI ACTIVE</b></header>
+                <div className="tawadud-bubble customer">Can you explain how this service works?</div>
+                <div className="tawadud-bubble ai">Yes. I can answer from the company knowledge base, and hand the conversation to a teammate when needed.</div>
+                <div className="tawadud-case-compose">Reply or take over… <span>↵</span></div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+
       <section className="case-section container">
         <div className="case-section-label">THE PROBLEM</div>
         <div className="case-two-col">
-          <h2>Repeated questions need consistent answers and a clear path to a person.</h2>
+          <h2>Customer support breaks when knowledge and conversations live in separate places.</h2>
           <div className="case-copy">
-            <p>Customer information often sits across documents, web pages and individual conversations. Repeated questions add work, while a disconnected handoff makes customers explain the same issue again.</p>
-            <p>I designed and developed TAWADUD around approved knowledge and connected conversation workflows: AI handles questions it can answer, and people take over when needed.</p>
+            <p>Repeated questions create unnecessary workload when information is scattered across documents, web pages and individual conversations. A disconnected handoff also forces customers to repeat context.</p>
+            <p>I built TAWADUD around one connected workflow: the AI answers from approved knowledge, conversations stay visible to the team, and a person can take over without losing history.</p>
           </div>
         </div>
       </section>
+
       <section className="case-dark">
         <div className="container case-section">
-          <div className="case-section-label light">WHAT I BUILT</div>
-          <div className="system-grid">{features.map(([title, description], index) => (
-            <article className="system-card" key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{description}</p></article>
-          ))}</div>
+          <div className="case-section-label light">CORE SYSTEMS</div>
+          <div className="system-grid">
+            {features.map(([title, description], index) => (
+              <article className="system-card" key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{description}</p></article>
+            ))}
+          </div>
         </div>
       </section>
+
       <section className="case-section container">
         <div className="case-section-label">IMPLEMENTATION</div>
         <div className="case-two-col">
-          <h2>From product design to tested web workflows.</h2>
+          <h2>From interface and data model to AI behavior and deployment.</h2>
           <div className="case-copy">
-            <p>My work covers the interface, Next.js and React implementation, TypeScript application logic, Supabase/PostgreSQL data structure, OpenAI integration and Vercel deployment, using AI-assisted development tools.</p>
-            <p>The platform includes an embeddable website widget, knowledge import and indexing, conversation assignment, analytics, workspace roles, multi-factor authentication and account security controls.</p>
-            <p>I tested customer and operator flows, reviewed failures and iterated on the product. The portfolio uses the same TAWADUD widget to answer questions about my work.</p>
+            <p>The application combines Next.js and React interfaces with TypeScript product logic, Supabase/PostgreSQL data, workspace access controls, OpenAI-powered answers and Vercel deployment.</p>
+            <p>I implemented the embeddable website widget, knowledge ingestion flows, conversation assignment, analytics, workspace roles, multi-factor authentication and account security controls.</p>
+            <p>I also tested customer and operator paths, reviewed failure states and iterated on behavior until the product worked as one coherent system rather than a set of disconnected screens.</p>
           </div>
         </div>
       </section>
-      <section className="case-next"><div className="container"><span>MORE SELECTED WORK</span><a href="/work/zorvenaq">Zorvenaq <b>↗</b></a></div></section>
-      <footer className="footer container"><span>© 2026 Mohammed Al-Obaido</span><a href="mailto:obedomohammed@gmail.com">Contact me ↗</a></footer>
+
+      <section className="case-next"><div className="container"><span>NEXT CASE STUDY</span><a href="/work/zorvenaq">Zorvenaq <b>↗</b></a></div></section>
+      <footer className="footer container"><span>© 2026 Mohammed Al-Obaido</span><a href="mailto:obedomohammed@gmail.com">obedomohammed@gmail.com ↗</a></footer>
     </main>
   );
 }

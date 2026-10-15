@@ -1,0 +1,119 @@
+export const metadata = {
+  title: "Workgrid Case Study | Mohammed Al-Obaido",
+  description: "Workgrid, a full-stack project management SaaS case study by Mohammed Al-Obaido.",
+};
+
+const systems = [
+  ["Authentication", "JWT-based registration and login with hashed passwords, expiring access tokens and protected routes."],
+  ["Multi-tenancy", "Users belong to isolated workspaces through explicit memberships instead of global application roles."],
+  ["Authorization", "OWNER, ADMIN and MEMBER permissions are enforced on the server before workspace actions execute."],
+  ["Kanban workflow", "A React dashboard consumes the real API and moves tasks through four persisted workflow states."],
+  ["Auditability", "Important mutations create workspace-scoped audit records surfaced directly in the product UI."],
+  ["Responsive product UI", "Workspace switching, projects, metrics, modals and the board adapt across desktop and mobile."],
+];
+
+const stack = [
+  ["Frontend", "React 19 · Vite · TypeScript · responsive CSS"],
+  ["Runtime", "Node.js 22 · Fastify · TypeScript"],
+  ["Data", "PostgreSQL · Prisma ORM · relational constraints"],
+  ["Security", "JWT · bcrypt · RBAC · request validation · rate limiting"],
+  ["Quality", "Vitest · ESLint · Docker · GitHub Actions · OpenAPI"],
+];
+
+export default function WorkgridCaseStudy() {
+  return (
+    <main className="case-page case-workgrid">
+      <header className="case-nav container">
+        <a className="case-brand" href="/"><span>~/</span>mohammed</a>
+        <a className="case-back" href="/#work">← Back to selected work</a>
+      </header>
+
+      <section className="case-hero container">
+        <div className="case-kicker">CASE STUDY · FULL-STACK SAAS · 2026</div>
+        <h1>WORK<em>GRID</em></h1>
+        <p className="case-lead">A multi-tenant project management SaaS with a React Kanban dashboard and a Fastify/PostgreSQL backend — built to make authentication, authorization, relational data, workflow state and auditability visible in one complete product.</p>
+        <div className="case-meta-grid">
+          <div><span>ROLE</span><strong>Full-Stack Developer</strong></div>
+          <div><span>FOCUS</span><strong>React Dashboard · REST API · RBAC · Audit Trail</strong></div>
+          <div><span>STACK</span><strong>React · Fastify · TypeScript · PostgreSQL · Prisma</strong></div>
+        </div>
+        <a className="case-live-link" href="https://github.com/Mohamedaloubaido/workgrid" target="_blank" rel="noreferrer">VIEW SOURCE CODE ↗</a>
+      </section>
+
+      <section className="case-section container">
+        <div className="case-section-label">WHY I BUILT IT</div>
+        <div className="case-two-col">
+          <h2>Full-stack quality becomes visible when UI state, permissions and database state have to agree.</h2>
+          <div className="case-copy">
+            <p>Workgrid was designed as a portfolio project that goes beyond CRUD screens. The goal was to model the concerns that appear in real SaaS systems: workspace isolation, user roles, protected actions, relational constraints, workflow state and traceable mutations.</p>
+            <p>The React dashboard is not a static mockup. It consumes the API for sessions, workspaces, projects, tasks and activity. Authentication proves who the user is; workspace membership and role checks decide what that user can do.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="case-dark">
+        <div className="container case-section">
+          <div className="case-section-label light">SYSTEM ARCHITECTURE</div>
+          <div className="flow-map">
+            <div><span>01</span><strong>React Dashboard</strong><small>Vite + TypeScript UI</small></div>
+            <b>→</b>
+            <div><span>02</span><strong>Fastify API</strong><small>Validation + domain routes</small></div>
+            <b>→</b>
+            <div><span>03</span><strong>Auth + RBAC</strong><small>Workspace-scoped permissions</small></div>
+            <b>→</b>
+            <div><span>04</span><strong>PostgreSQL</strong><small>Prisma + relational constraints</small></div>
+          </div>
+        </div>
+      </section>
+
+      <section className="case-section container">
+        <div className="case-section-label">CORE SYSTEMS</div>
+        <div className="system-grid">
+          {systems.map(([title, body], index) => (
+            <article className="system-card" key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{body}</p></article>
+          ))}
+        </div>
+      </section>
+
+      <section className="case-section container">
+        <div className="case-section-label">PRODUCT FLOW</div>
+        <div className="state-chain">
+          {['sign in','workspace','project','task','workflow state'].map((item, index) => <div key={item}><span>0{index + 1}</span><strong>{item}</strong></div>)}
+        </div>
+        <p className="chain-note">The interface and backend share the same domain model: a user enters a workspace, selects a project, creates tasks and moves them through persisted workflow states while each mutation is checked and recorded.</p>
+      </section>
+
+      <section className="case-section container">
+        <div className="case-section-label">TECHNICAL STACK</div>
+        <div className="impact-grid">
+          {stack.map(([title, body]) => <article key={title}><strong>{title}</strong><p>{body}</p></article>)}
+        </div>
+      </section>
+
+      <section className="case-dark">
+        <div className="container case-section">
+          <div className="case-section-label light">ENGINEERING DECISIONS</div>
+          <div className="system-grid">
+            <article className="system-card"><span>01</span><h3>Server-side RBAC</h3><p>Permission checks live beside backend operations rather than relying on hidden UI controls.</p></article>
+            <article className="system-card"><span>02</span><h3>Database constraints</h3><p>Unique workspace slugs, project keys and relational foreign keys protect invariants below the HTTP layer.</p></article>
+            <article className="system-card"><span>03</span><h3>Optimistic board updates</h3><p>Task moves update immediately in the UI, persist through the API and roll back if the server rejects the change.</p></article>
+            <article className="system-card"><span>04</span><h3>Quality gates</h3><p>The repository includes linting, type checking, automated tests, Docker configuration and CI workflow definitions.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section className="case-section container">
+        <div className="case-section-label">WHAT THIS PROVES</div>
+        <div className="impact-grid">
+          <article><strong>Full-stack integration</strong><p>The dashboard, API and database operate on the same workspace/project/task model rather than existing as disconnected demos.</p></article>
+          <article><strong>Security thinking</strong><p>Identity, authorization and tenant isolation are treated as product rules, not optional polish.</p></article>
+          <article><strong>Relational modeling</strong><p>Workspace membership, projects, tasks and audit history are represented as explicit PostgreSQL relationships.</p></article>
+          <article><strong>Product engineering</strong><p>Responsive UI, loading and failure states, optimistic updates, API contracts and backend rules are designed together.</p></article>
+        </div>
+      </section>
+
+      <section className="case-next"><div className="container"><span>NEXT CASE STUDY</span><a href="/work/tawadud">TAWADUD <b>↗</b></a></div></section>
+      <footer className="footer container"><span>© 2026 Mohammed Al-Obaido</span><a href="mailto:obedomohammed@gmail.com">obedomohammed@gmail.com ↗</a></footer>
+    </main>
+  );
+}
