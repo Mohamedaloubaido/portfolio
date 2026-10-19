@@ -37,7 +37,7 @@ const projects: Project[] = [
     description:
       "An evaluation and quality-gate platform for AI agents that measures answer quality, grounding, tool behavior, cost and latency before changes are merged or deployed.",
     stack: ["FastAPI", "Python", "Next.js", "TypeScript", "PostgreSQL", "OpenAI", "GitHub Actions"],
-    caseUrl: null,
+    caseUrl: "/work/agentgate",
     liveUrl: null,
     githubUrl: "https://github.com/Mohamedaloubaido/agentgate",
     visual: "system",
@@ -54,7 +54,7 @@ const projects: Project[] = [
     description:
       "A multi-tenant incident operations system with uptime monitoring, realtime coordination, public status pages, evidence-grounded AI analysis and AI-assisted postmortems.",
     stack: ["Next.js", "Fastify", "TypeScript", "PostgreSQL", "Redis", "BullMQ", "OpenAI", "Docker"],
-    caseUrl: null,
+    caseUrl: "/work/pulseops-ai",
     liveUrl: null,
     githubUrl: "https://github.com/Mohamedaloubaido/pulseops-ai",
     visual: "system",
@@ -71,7 +71,7 @@ const projects: Project[] = [
     description:
       "An open-source toolkit for Arabic-first software: 22-market country metadata, Arabic text normalization, phone and IBAN handling, localized money, validation, React primitives, Faker and CLI tooling.",
     stack: ["TypeScript", "Monorepo", "Zod", "React", "CLI", "Vitest", "pnpm"],
-    caseUrl: null,
+    caseUrl: "/work/arabdevkit",
     liveUrl: null,
     githubUrl: "https://github.com/Mohamedaloubaido/ArabDevKit",
     visual: "system",
@@ -116,23 +116,6 @@ const projects: Project[] = [
   },
   {
     index: "07",
-    title: "MAWJA",
-    status: "IN DEVELOPMENT",
-    type: "Mobile Social Product",
-    description:
-      "A mobile-first social product being developed with Expo and React Native, focused on exploring a distinct social interaction model rather than cloning an existing network.",
-    stack: ["React Native", "Expo", "TypeScript", "Mobile UI", "Product Design"],
-    caseUrl: null,
-    liveUrl: null,
-    githubUrl: null,
-    visual: "system",
-    visualLabel: "mobile / social product",
-    visualTitle: "Mawja mobile app",
-    visualBadge: "EXPO",
-    features: ["Mobile UX", "Social Graph", "Discovery", "Interactions"],
-  },
-  {
-    index: "08",
     title: "EMPLOYEE RECORDS",
     status: "LIVE + SOURCE",
     type: "Data Management Dashboard",
@@ -145,7 +128,7 @@ const projects: Project[] = [
     visual: "records",
   },
   {
-    index: "09",
+    index: "08",
     title: "NAQSHA",
     status: "CASE STUDY",
     type: "E-commerce Experience",
@@ -162,9 +145,9 @@ const projects: Project[] = [
 const stackGroups = [
   {
     number: "01",
-    title: "Frontend & Mobile",
-    description: "Interfaces for web and mobile products that stay responsive and understandable.",
-    items: ["Next.js", "React", "TypeScript", "React Native / Expo", "Responsive UI"],
+    title: "Frontend",
+    description: "Interfaces for modern web products that stay responsive and understandable.",
+    items: ["Next.js", "React", "TypeScript", "Vite", "Responsive UI", "Component Systems"],
   },
   {
     number: "02",
@@ -239,7 +222,7 @@ function ProjectVisual({ project }: { project: Project }) {
       <div className="dev-visual dev-visual-naqsha" aria-hidden="true">
         <div className="dev-naqsha-copy"><small>CUSTOM PRINT / 2026</small><strong>Wear your idea.</strong><span>Contemporary products, built around personal expression.</span></div>
         <div className="dev-shirt"><div>NQ</div></div>
-        <div className="dev-naqsha-index">09</div>
+        <div className="dev-naqsha-index">08</div>
       </div>
     );
   }
@@ -294,7 +277,7 @@ export default function Home() {
           <p className="dev-eyebrow">FULL-STACK DEVELOPER · APPLIED AI · PRODUCT BUILDER</p>
           <h1>I build products<br />from <em>interface</em> to infrastructure.</h1>
           <p className="dev-hero-lead">
-            I design and develop full-stack web and mobile products with TypeScript, React, PostgreSQL and Python — combining product workflows, secure backend systems and applied AI into software that can actually ship.
+            I design and develop full-stack web products with TypeScript, React, PostgreSQL and Python — combining product workflows, secure backend systems and applied AI into software that can actually ship.
           </p>
           <div className="dev-hero-actions">
             <a className="dev-button dev-button-primary" href="#work">View selected work <span>↓</span></a>
