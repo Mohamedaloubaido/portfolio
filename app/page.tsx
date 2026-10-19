@@ -1,4 +1,21 @@
-const projects = [
+type Project = {
+  index: string;
+  title: string;
+  status: string;
+  type: string;
+  description: string;
+  stack: string[];
+  caseUrl: string | null;
+  liveUrl: string | null;
+  githubUrl: string | null;
+  visual: "tawadud" | "system" | "records" | "naqsha";
+  visualLabel?: string;
+  visualTitle?: string;
+  visualBadge?: string;
+  features?: string[];
+};
+
+const projects: Project[] = [
   {
     index: "01",
     title: "TAWADUD",
@@ -14,32 +31,108 @@ const projects = [
   },
   {
     index: "02",
+    title: "AGENTGATE",
+    status: "OPEN SOURCE · V0.1",
+    type: "AI Agent Reliability & CI",
+    description:
+      "An evaluation and quality-gate platform for AI agents that measures answer quality, grounding, tool behavior, cost and latency before changes are merged or deployed.",
+    stack: ["FastAPI", "Python", "Next.js", "TypeScript", "PostgreSQL", "OpenAI", "GitHub Actions"],
+    caseUrl: null,
+    liveUrl: null,
+    githubUrl: "https://github.com/Mohamedaloubaido/agentgate",
+    visual: "system",
+    visualLabel: "agent evaluations / ci gate",
+    visualTitle: "AI quality gate",
+    visualBadge: "PASS / FAIL",
+    features: ["Datasets", "Evaluators", "LLM Judge", "CI Gate"],
+  },
+  {
+    index: "03",
+    title: "PULSEOPS AI",
+    status: "SOURCE · FULL STACK",
+    type: "AI Incident Operations Platform",
+    description:
+      "A multi-tenant incident operations system with uptime monitoring, realtime coordination, public status pages, evidence-grounded AI analysis and AI-assisted postmortems.",
+    stack: ["Next.js", "Fastify", "TypeScript", "PostgreSQL", "Redis", "BullMQ", "OpenAI", "Docker"],
+    caseUrl: null,
+    liveUrl: null,
+    githubUrl: "https://github.com/Mohamedaloubaido/pulseops-ai",
+    visual: "system",
+    visualLabel: "incident ops / monitoring",
+    visualTitle: "Incident command",
+    visualBadge: "REALTIME",
+    features: ["Monitors", "Incidents", "AI Analysis", "Postmortems"],
+  },
+  {
+    index: "04",
+    title: "ARABDEVKIT",
+    status: "OPEN SOURCE · V0.1",
+    type: "Arab-World Developer Infrastructure",
+    description:
+      "An open-source toolkit for Arabic-first software: 22-market country metadata, Arabic text normalization, phone and IBAN handling, localized money, validation, React primitives, Faker and CLI tooling.",
+    stack: ["TypeScript", "Monorepo", "Zod", "React", "CLI", "Vitest", "pnpm"],
+    caseUrl: null,
+    liveUrl: null,
+    githubUrl: "https://github.com/Mohamedaloubaido/ArabDevKit",
+    visual: "system",
+    visualLabel: "arabic developer infrastructure",
+    visualTitle: "22-market toolkit",
+    visualBadge: "OPEN SOURCE",
+    features: ["Core API", "Zod", "React", "CLI + Faker"],
+  },
+  {
+    index: "05",
+    title: "WORKGRID",
+    status: "LIVE FRONTEND + SOURCE",
+    type: "Project Management SaaS",
+    description:
+      "A production-minded multi-tenant project management system with JWT authentication, workspace-scoped RBAC, PostgreSQL relationships, audit logs, Kanban workflows, Docker and automated quality gates.",
+    stack: ["Fastify", "React", "TypeScript", "PostgreSQL", "Prisma", "JWT", "Docker"],
+    caseUrl: "/work/workgrid",
+    liveUrl: "https://workgrid-web.vercel.app",
+    githubUrl: "https://github.com/Mohamedaloubaido/workgrid",
+    visual: "system",
+    visualLabel: "workspace / project api",
+    visualTitle: "Multi-tenant workspace",
+    visualBadge: "RBAC",
+    features: ["Auth", "Workspaces", "Kanban", "Audit Logs"],
+  },
+  {
+    index: "06",
     title: "ZORVENAQ",
     status: "IN DEVELOPMENT",
     type: "Freelance Marketplace",
     description:
-      "A marketplace system covering matching, applications, offers, contracts, milestones, workspaces, disputes, role-based administration and internal wallet flows.",
+      "A marketplace system covering matching, applications, invitations, offers, contracts, milestones, workspaces, disputes, role-based administration and internal wallet and escrow flows.",
     stack: ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL", "Docker", "RBAC"],
     caseUrl: "/work/zorvenaq",
     liveUrl: null,
     githubUrl: null,
-    visual: "zorvenaq",
+    visual: "system",
+    visualLabel: "marketplace / contract lifecycle",
+    visualTitle: "Marketplace workflow",
+    visualBadge: "ESCROW",
+    features: ["Matching", "Contracts", "Milestones", "Wallet"],
   },
   {
-    index: "03",
-    title: "WORKGRID",
-    status: "SOURCE + CASE STUDY",
-    type: "Project Management SaaS Backend",
+    index: "07",
+    title: "MAWJA",
+    status: "IN DEVELOPMENT",
+    type: "Mobile Social Product",
     description:
-      "A multi-tenant project management API built around JWT authentication, workspace-scoped RBAC, PostgreSQL relationships, audit logs, validation, tests, Docker and automated quality gates.",
-    stack: ["Fastify", "TypeScript", "PostgreSQL", "Prisma", "JWT", "RBAC", "Docker"],
-    caseUrl: "/work/workgrid",
+      "A mobile-first social product being developed with Expo and React Native, focused on exploring a distinct social interaction model rather than cloning an existing network.",
+    stack: ["React Native", "Expo", "TypeScript", "Mobile UI", "Product Design"],
+    caseUrl: null,
     liveUrl: null,
-    githubUrl: "https://github.com/Mohamedaloubaido/workgrid",
-    visual: "workgrid",
+    githubUrl: null,
+    visual: "system",
+    visualLabel: "mobile / social product",
+    visualTitle: "Mawja mobile app",
+    visualBadge: "EXPO",
+    features: ["Mobile UX", "Social Graph", "Discovery", "Interactions"],
   },
   {
-    index: "04",
+    index: "08",
     title: "EMPLOYEE RECORDS",
     status: "LIVE + SOURCE",
     type: "Data Management Dashboard",
@@ -52,7 +145,7 @@ const projects = [
     visual: "records",
   },
   {
-    index: "05",
+    index: "09",
     title: "NAQSHA",
     status: "CASE STUDY",
     type: "E-commerce Experience",
@@ -69,39 +162,39 @@ const projects = [
 const stackGroups = [
   {
     number: "01",
-    title: "Frontend",
-    description: "Interfaces that stay fast, responsive and easy to understand.",
-    items: ["Next.js", "React", "TypeScript", "Responsive UI", "Component Systems"],
+    title: "Frontend & Mobile",
+    description: "Interfaces for web and mobile products that stay responsive and understandable.",
+    items: ["Next.js", "React", "TypeScript", "React Native / Expo", "Responsive UI"],
   },
   {
     number: "02",
     title: "Backend & Data",
-    description: "Application logic, data models and secure access patterns.",
-    items: ["Supabase", "PostgreSQL", "SQL", "REST APIs", "Auth", "RLS / RBAC"],
+    description: "Application logic, APIs, relational models, queues and secure access boundaries.",
+    items: ["Fastify", "FastAPI / Python", "PostgreSQL", "Supabase", "Prisma", "Redis", "RLS / RBAC"],
   },
   {
     number: "03",
-    title: "Shipping",
-    description: "From local development to a testable, deployed product.",
-    items: ["Git / GitHub", "Vercel", "Docker", "Sentry", "Testing", "Product QA"],
+    title: "AI & Delivery",
+    description: "Applied AI, evaluation, automation and production-minded delivery workflows.",
+    items: ["OpenAI", "LLM Evaluation", "GitHub Actions", "Docker", "Vercel", "Testing", "Product QA"],
   },
 ];
 
 const engineeringScope = [
   ["Authentication", "Accounts, sessions and protected product areas."],
-  ["Authorization", "Role-based permissions and workspace access rules."],
-  ["Data modeling", "Structured relational data and operational state."],
-  ["AI integration", "Grounded answers, knowledge flows and human handoff."],
-  ["Product workflows", "Multi-step states that remain understandable to users."],
-  ["Deployment", "Production-minded builds, monitoring and iteration."],
+  ["Authorization", "Role-based permissions, tenant boundaries and workspace access rules."],
+  ["Data modeling", "Structured relational data, queues, auditability and operational state."],
+  ["Applied AI", "Grounded AI workflows, evaluation pipelines, human review and traceability."],
+  ["Product workflows", "Multi-step business states that remain understandable to users."],
+  ["Deployment", "Docker, CI, monitoring, public deployments and iterative product QA."],
 ];
 
 function Arrow() {
   return <span aria-hidden="true">↗</span>;
 }
 
-function ProjectVisual({ kind }: { kind: string }) {
-  if (kind === "tawadud") {
+function ProjectVisual({ project }: { project: Project }) {
+  if (project.visual === "tawadud") {
     return (
       <div className="dev-visual dev-visual-tawadud" aria-hidden="true">
         <div className="dev-window-bar"><i /><i /><i /><span>workspace / inbox</span></div>
@@ -125,47 +218,7 @@ function ProjectVisual({ kind }: { kind: string }) {
     );
   }
 
-  if (kind === "zorvenaq") {
-    return (
-      <div className="dev-visual dev-visual-zorvenaq" aria-hidden="true">
-        <div className="dev-window-bar"><i /><i /><i /><span>marketplace / contract</span></div>
-        <div className="dev-zorvenaq-layout">
-          <div className="dev-z-side"><b>Z</b><span>Overview</span><span>Projects</span><span>Contracts</span><span>Wallet</span></div>
-          <div className="dev-z-main">
-            <div className="dev-z-title"><small>ACTIVE CONTRACT</small><strong>Website Redesign</strong><span>Healthy</span></div>
-            <div className="dev-milestones">
-              <article><small>01</small><b>Discovery</b><span>Completed</span></article>
-              <article className="active"><small>02</small><b>Build</b><span>In progress</span></article>
-              <article><small>03</small><b>QA</b><span>Upcoming</span></article>
-            </div>
-            <div className="dev-z-bottom"><span>Escrow secured</span><b>$1,850</b><i>Milestone 2 of 3</i></div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (kind === "workgrid") {
-    return (
-      <div className="dev-visual dev-visual-zorvenaq" aria-hidden="true">
-        <div className="dev-window-bar"><i /><i /><i /><span>api / workspace architecture</span></div>
-        <div className="dev-zorvenaq-layout">
-          <div className="dev-z-side"><b>W</b><span>Auth</span><span>RBAC</span><span>Projects</span><span>Audit</span></div>
-          <div className="dev-z-main">
-            <div className="dev-z-title"><small>MULTI-TENANT API</small><strong>Workspace boundary</strong><span>Protected</span></div>
-            <div className="dev-milestones">
-              <article><small>01</small><b>Request</b><span>Validated</span></article>
-              <article className="active"><small>02</small><b>Authorize</b><span>RBAC</span></article>
-              <article><small>03</small><b>Persist</b><span>PostgreSQL</span></article>
-            </div>
-            <div className="dev-z-bottom"><span>Quality gates</span><b>TYPE SAFE</b><i>Tests · Docker · CI</i></div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (kind === "records") {
+  if (project.visual === "records") {
     return (
       <div className="dev-visual dev-visual-records" aria-hidden="true">
         <div className="dev-window-bar"><i /><i /><i /><span>employees / dashboard</span></div>
@@ -181,11 +234,38 @@ function ProjectVisual({ kind }: { kind: string }) {
     );
   }
 
+  if (project.visual === "naqsha") {
+    return (
+      <div className="dev-visual dev-visual-naqsha" aria-hidden="true">
+        <div className="dev-naqsha-copy"><small>CUSTOM PRINT / 2026</small><strong>Wear your idea.</strong><span>Contemporary products, built around personal expression.</span></div>
+        <div className="dev-shirt"><div>NQ</div></div>
+        <div className="dev-naqsha-index">09</div>
+      </div>
+    );
+  }
+
+  const features = project.features ?? ["Architecture", "API", "Data", "Delivery"];
+
   return (
-    <div className="dev-visual dev-visual-naqsha" aria-hidden="true">
-      <div className="dev-naqsha-copy"><small>CUSTOM PRINT / 2026</small><strong>Wear your idea.</strong><span>Contemporary products, built around personal expression.</span></div>
-      <div className="dev-shirt"><div>NQ</div></div>
-      <div className="dev-naqsha-index">05</div>
+    <div className="dev-visual dev-visual-zorvenaq" aria-hidden="true">
+      <div className="dev-window-bar"><i /><i /><i /><span>{project.visualLabel ?? project.type}</span></div>
+      <div className="dev-zorvenaq-layout">
+        <div className="dev-z-side">
+          <b>{project.title.slice(0, 1)}</b>
+          {features.slice(0, 4).map((feature) => <span key={feature}>{feature}</span>)}
+        </div>
+        <div className="dev-z-main">
+          <div className="dev-z-title"><small>{project.status}</small><strong>{project.visualTitle ?? project.title}</strong><span>{project.visualBadge ?? "SYSTEM"}</span></div>
+          <div className="dev-milestones">
+            {features.slice(0, 3).map((feature, index) => (
+              <article className={index === 1 ? "active" : undefined} key={feature}>
+                <small>0{index + 1}</small><b>{feature}</b><span>{index === 0 ? "Ready" : index === 1 ? "Active" : "Integrated"}</span>
+              </article>
+            ))}
+          </div>
+          <div className="dev-z-bottom"><span>Engineering stack</span><b>{project.stack[0]}</b><i>{project.stack.slice(1, 4).join(" · ")}</i></div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -211,10 +291,10 @@ export default function Home() {
       <section className="dev-hero dev-container">
         <div className="dev-hero-copy">
           <div className="dev-status"><span /> Available for full-stack opportunities</div>
-          <p className="dev-eyebrow">FULL-STACK DEVELOPER · PRODUCT BUILDER</p>
-          <h1>I build web products<br />from <em>interface</em> to infrastructure.</h1>
+          <p className="dev-eyebrow">FULL-STACK DEVELOPER · APPLIED AI · PRODUCT BUILDER</p>
+          <h1>I build products<br />from <em>interface</em> to infrastructure.</h1>
           <p className="dev-hero-lead">
-            I design and develop modern web applications with Next.js, React, TypeScript and PostgreSQL — turning product ideas into working systems with real workflows, secure data and deployable code.
+            I design and develop full-stack web and mobile products with TypeScript, React, PostgreSQL and Python — combining product workflows, secure backend systems and applied AI into software that can actually ship.
           </p>
           <div className="dev-hero-actions">
             <a className="dev-button dev-button-primary" href="#work">View selected work <span>↓</span></a>
@@ -229,27 +309,27 @@ export default function Home() {
             <p className="indent">name: <span className="token-green">&quot;Mohammed Al-Obaido&quot;</span>,</p>
             <p className="indent">role: <span className="token-green">&quot;Full-Stack Developer&quot;</span>,</p>
             <p className="indent">focus: [</p>
-            <p className="indent-2"><span className="token-green">&quot;Web Apps&quot;</span>, <span className="token-green">&quot;SaaS&quot;</span>, <span className="token-green">&quot;AI Products&quot;</span></p>
+            <p className="indent-2"><span className="token-green">&quot;SaaS&quot;</span>, <span className="token-green">&quot;AI Systems&quot;</span>, <span className="token-green">&quot;Developer Tools&quot;</span></p>
             <p className="indent">],</p>
-            <p className="indent">shipping: <span className="token-green">&quot;TAWADUD&quot;</span>,</p>
+            <p className="indent">shipping: <span className="token-green">&quot;TAWADUD · AgentGate · PulseOps&quot;</span>,</p>
             <p className="indent">available: <span className="token-orange">true</span>,</p>
             <p>{'}'}</p>
           </div>
-          <div className="dev-panel-footer"><span><i /> build passing</span><span>Next.js · TypeScript · PostgreSQL</span></div>
+          <div className="dev-panel-footer"><span><i /> building production-minded systems</span><span>TypeScript · Python · PostgreSQL</span></div>
         </div>
       </section>
 
       <section className="dev-tech-strip" aria-label="Primary technology stack">
         <div className="dev-container dev-tech-row">
-          {['NEXT.JS', 'REACT', 'TYPESCRIPT', 'POSTGRESQL', 'SUPABASE', 'DOCKER', 'VERCEL'].map((item) => <span key={item}>{item}</span>)}
+          {['NEXT.JS', 'REACT', 'TYPESCRIPT', 'POSTGRESQL', 'FASTIFY', 'FASTAPI', 'REDIS', 'DOCKER'].map((item) => <span key={item}>{item}</span>)}
         </div>
       </section>
 
       <section className="dev-section dev-container" id="work">
         <div className="dev-section-heading">
           <div><span className="dev-section-number">01</span><p className="dev-eyebrow">SELECTED WORK</p></div>
-          <h2>Products, not practice pages.</h2>
-          <p>Projects where I worked across product logic, interface design, data, permissions, workflows, testing and deployment.</p>
+          <h2>Products, infrastructure and applied AI.</h2>
+          <p>Projects where I worked across product logic, frontend, APIs, data modeling, permissions, background jobs, AI workflows, testing and delivery.</p>
         </div>
 
         <div className="dev-projects">
@@ -260,7 +340,7 @@ export default function Home() {
                 <span>{project.type}</span>
                 <b>{project.status}</b>
               </div>
-              <ProjectVisual kind={project.visual} />
+              <ProjectVisual project={project} />
               <div className="dev-project-body">
                 <div>
                   <h3>{project.title}</h3>
@@ -303,9 +383,9 @@ export default function Home() {
         <div className="dev-about-grid">
           <div className="dev-about-copy">
             <div><span className="dev-section-number">03</span><p className="dev-eyebrow">HOW I BUILD</p></div>
-            <h2>I care about what happens after the UI looks good.</h2>
+            <h2>I care about the system behind the screen.</h2>
             <p>
-              A polished screen is only the surface. I think about data structure, permissions, states, failure paths and how a feature behaves across the whole product. My strongest work is where frontend, backend and product logic have to meet cleanly.
+              A polished interface is only one layer. I think about tenant boundaries, data structure, permissions, queues, failure paths, observability and how AI behaves inside real product workflows. My strongest work is where frontend, backend, infrastructure and product logic need to meet cleanly.
             </p>
             <a href="/resume" className="dev-text-link">View resume <Arrow /></a>
           </div>
